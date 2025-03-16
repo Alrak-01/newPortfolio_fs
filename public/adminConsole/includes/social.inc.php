@@ -1,11 +1,10 @@
 <?php 
+require_once("../../../autoload/autoload.php");
+
 $response = array(
 	"status" => 0,
 	"message" => "Form Submission Failed"
 );
-
-$social = new Admin();
-$social->tableName = "tbl_admin";
 
 if (isset($_POST['editAbout'])) {
 	$text = htmlspecialchars(stripslashes($_POST['text']));

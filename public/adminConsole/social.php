@@ -79,13 +79,13 @@
             <div class="skill bg-white py-5 rounded-lg">
         
                 <div class="skill-container">
-                    <form class="px-5 rounded-md grid gap-3 text-sm lg:text-lg">
+                    <!-- <form id="formSocial" class="px-5 rounded-md grid gap-3 text-sm lg:text-lg">
                         <div class="grid lg:grid-cols-2 space-y-4 lg:space-y-0 lg:gap-5">
                             <div class="category grid lg:gap-2">
                                 <label for="category" class="font-semibold">
                                     New Social <span class="text-red-600 text-sm">*</span>
                                 </label>
-                                <input type="text" placeholder="Skill" class="border border-gray-300 p-2 text-sm rounded-md outline-none focus:border-green-900 transition-all duration-300 delay-75" spellcheck="false" required>
+                                <input  type="text" placeholder="Skill" class="border border-gray-300 p-2 text-sm rounded-md outline-none focus:border-green-900 transition-all duration-300 delay-75" spellcheck="false" required>
                             </div>
                             <div class="category grid gap-2">
                                 <label for="category" class="font-semibold">
@@ -96,11 +96,11 @@
                         </div>
         
                         <div class="button flex items-end lg:justify-end pb-5">
-                            <button type="submit" class="text-xs lg:text-sm bg-black text-white py-2 px-4 rounded-md hover:bg-opacity-90">
+                            <button type="submit" name="addSocial" class="text-xs lg:text-sm bg-black text-white py-2 px-4 rounded-md hover:bg-opacity-90">
                                 Submit
                             </button>
                         </div>
-                    </form>
+                    </form> -->
                 </div>
         
                 <div class="displayCategory pl-5 overflow-hidden">

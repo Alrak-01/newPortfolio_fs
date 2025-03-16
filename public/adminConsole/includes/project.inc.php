@@ -1,11 +1,10 @@
 <?php 
+require_once("../../../autoload/autoload.php");
+
 $response = array(
 	"message" => "Form Submission Failed",
 	"status" => 0
 );
-
-$project = new project();
-$project->tableName = "tbl_project";
 
 if (isset($_POST['addProject'])) {
 		$stack = htmlspecialchars(stripslashes($_POST['stack']));
@@ -56,5 +55,20 @@ if (isset($_POST['editProject'])) {
 				}
 		}
 }
+
+if (isset($_POST['delete_project']) && isset($_POST['project_id'])) {
+	$id = filter_input(INPUT_POST, "project_id", FILTER_SANITIZER_NUMBER_INT);
+	$result = $project->deleteProject($id);
+	if ($result == 0) {
+		$response['message'] = "Database error occurred";
+	}
+	elseif ($result == 1){
+		$response['message'] = "project deleted successfully!";
+	}
+}
+else{
+	$response['message'] = "POST error or ID not found...";
+}
+
 
 echo json_encode($response);

@@ -40,44 +40,44 @@ if (isset($_POST['addSkill'])) {
 		}
 }
 
-// if (isset($_POST['editSkill'])) {
-// 	$name = htmlspecialchars(stripslashes($_POST['name']));
-// 	$experience = htmlspecialchars(stripslashes($_POST['experience']));
-// 	$type = htmlspecialchars(stripslashes($_POST['type']));
+if (isset($_POST['editSkill'])) {
+	$name = htmlspecialchars(stripslashes($_POST['name']));
+	$experience = htmlspecialchars(stripslashes($_POST['experience']));
+	$type = htmlspecialchars(stripslashes($_POST['type']));
 
-// 	if (empty($name) || empty($experience) || empty($type)) {
-// 		$response['message'] = "Input field cannot be empty";
-// 	}
-// 	else{
-// 		if (!isset($_POST['skill_id'])) {
-// 			$response['message'] = "Id not founc";
-// 		}
-// 		$id = filter_input(INPUT_POST, "skill_id", FILTER_SANITIZE_NUMBER_INT)
-// 		$result = $skill->updateSkill($id, $name, $experience, $type);
-// 		if ($result == 0) {
-// 			$response['message'] = "Database error occurred";
-// 		}
-// 		elseif ($result == 1){
-// 			$response['message'] = "Skill updated successfully";
-// 			$response['status'] = 1;
-// 		}
-// 	}
+	if (empty($name) || empty($experience) || empty($type)) {
+		$response['message'] = "Input field cannot be empty";
+	}
+	else{
+		if (!isset($_POST['skill_id'])) {
+			$response['message'] = "Id not founc";
+		}
+		$id = filter_input(INPUT_POST, "skill_id", FILTER_SANITIZE_NUMBER_INT)
+		$result = $skill->updateSkill($id, $name, $experience, $type);
+		if ($result == 0) {
+			$response['message'] = "Database error occurred";
+		}
+		elseif ($result == 1){
+			$response['message'] = "Skill updated successfully";
+			$response['status'] = 1;
+		}
+	}
 
-// }
+}
 
-// if (isset($_POST['delete_skill']) && isset($_POST['skill_id'])) {
-// 	$id = filter_input(INPUT_POST, "skill_id", FILTER_SANITIZER_NUMBER_INT);
-// 	$result = $skill->deleteSkill($id);
-// 	if ($result == 0) {
-// 		$response['message'] = "Database error occurred";
-// 	}
-// 	elseif ($result == 1){
-// 		$response['message'] = "Skill deleted successfully!";
-// 	}
-// }
-// else{
-// 	$response['message'] = "POST error or ID not found...";
-// }
+if (isset($_POST['delete_skill']) && isset($_POST['skill_id'])) {
+	$id = filter_input(INPUT_POST, "skill_id", FILTER_SANITIZER_NUMBER_INT);
+	$result = $skill->deleteSkill($id);
+	if ($result == 0) {
+		$response['message'] = "Database error occurred";
+	}
+	elseif ($result == 1){
+		$response['message'] = "Skill deleted successfully!";
+	}
+}
+else{
+	$response['message'] = "POST error or ID not found...";
+}
 
 echo json_encode($response);
 

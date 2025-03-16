@@ -23,3 +23,12 @@ function myAutoloader($className){
 
 $skill = new Skill();
 $skill->tableName = "tbl_skill";
+
+$social = new Admin();
+$social->tableName = "tbl_admin";
+
+$about = new Admin();
+$about->tableName = "tbl_admin";
+
+$project = new Project();
+$project->tableName = "tbl_project";

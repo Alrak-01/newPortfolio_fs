@@ -1,12 +1,10 @@
 <?php 
+require_once("../../../autoload/autoload.php");
 
 $response = array(
 	"status" => 0,
 	"message" => "Form Submission Failed"
 );
-
-$about = new Admin();
-$about->tableName = "tbl_admin";
 
 if (isset($_POST['editAbout'])) {
 	$text = htmlspecialchars(stripslashes($_POST['text']));
