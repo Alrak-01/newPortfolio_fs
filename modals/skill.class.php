@@ -1,5 +1,6 @@
 <?php
-include("../../../config/database.php");
+// include("../../../config/database.php");
+
 class Skill extends Database{
   public $tableName;
   public $db_con;
@@ -33,7 +34,7 @@ class Skill extends Database{
   public function updateSkill($id, $name, $experience, $type){
     $sql = "UPDATE ".$this->tableName." SET `name` = ?, `experience` = ?, `type` = ? WHERE `id` = ?";
     $stmt = $this->db_con->prepare($sql);
-    $stmt->execute([$name, $experience, $type]);
+    $stmt->execute([$name, $experience, $type, $id]);
     return $stmt ? 1 : 0;
   }
 

@@ -1,5 +1,6 @@
 <?php
-include("../config/database.php");
+// include("../../../config/database.php");
+
 class Admin extends Database{
   public $tableName;
   public $db_con;

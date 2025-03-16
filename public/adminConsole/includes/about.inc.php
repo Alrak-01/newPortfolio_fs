@@ -25,3 +25,5 @@ if (isset($_POST['editAbout'])) {
 		}
 	}
 }
+
+echo json_encode($response);

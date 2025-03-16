@@ -1,4 +1,6 @@
 <?php
+include("../../../config/database.php");
+
 // AUTOLOADER FUNCTION
 spl_autoload_register('myAutoloader');
 
