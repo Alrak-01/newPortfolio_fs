@@ -67,8 +67,8 @@
                                 HTML / CSS - 
                                 <span>3 years</span>
                                 <span class="pl-3 space-x-2">
-                                    <i class="fa-solid fa-trash text-red-600"></i>
-                                    <i class="fa-solid fa-pen-to-square text-blue-600"></i>
+                                    <a href="#"><i class="fa-solid fa-trash text-red-600"></i></a>
+                                    <a href="editSkill.php"><i class="fa-solid fa-pen-to-square text-blue-600"></i></a>
                                 </span>
                             </li>
         
@@ -76,8 +76,8 @@
                                 HTML / CSS - 
                                 <span>3 years</span>
                                 <span class="pl-3 space-x-2">
-                                    <i class="fa-solid fa-trash text-red-600"></i>
-                                    <i class="fa-solid fa-pen-to-square text-blue-600"></i>
+                                    <a href="#"><i class="fa-solid fa-trash text-red-600"></i></a>
+                                    <a href="editSkill.php"><i class="fa-solid fa-pen-to-square text-blue-600"></i></a>
                                 </span>
                             </li>
         
@@ -85,8 +85,8 @@
                                 JavaScript - 
                                 <span>3 years</span>
                                 <span class="pl-3 space-x-2">
-                                    <i class="fa-solid fa-trash text-red-600"></i>
-                                    <i class="fa-solid fa-pen-to-square text-blue-600"></i>
+                                   <a href="#"><i class="fa-solid fa-trash text-red-600"></i></a>
+                                    <a href="editSkill.php"><i class="fa-solid fa-pen-to-square text-blue-600"></i></a>
                                 </span>
                             </li>
         

@@ -59,7 +59,7 @@ $(document).ready(function () {
 					}
 					else if(response.status == 1) {
 						alert(response.message);
-						$("#editSkillForm")[0].reset();
+						window.location.href = "skill.php?update=success";
 					}
 				},
 				error : function(){

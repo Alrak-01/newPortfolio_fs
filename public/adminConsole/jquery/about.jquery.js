@@ -29,6 +29,7 @@ $(document).ready(function(){
 				}
 				else if(response.status == 1){
 					alert(response.message);
+					window.location.href = "about.php?success";
 				}
 			},
 

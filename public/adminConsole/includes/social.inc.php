@@ -6,15 +6,25 @@ $response = array(
 	"message" => "Form Submission Failed"
 );
 
-if (isset($_POST['editAbout'])) {
-	$text = htmlspecialchars(stripslashes($_POST['text']));
-	if (empty($text)) {
+if (isset($_POST['editSocial'])) {
+	$linkedin = htmlspecialchars(stripslashes($_POST['linkedin']));
+	$github = htmlspecialchars(stripslashes($_POST['github']));
+	$whatsapp = htmlspecialchars(stripslashes($_POST['whatsapp']));
+	$skype = htmlspecialchars(stripslashes($_POST['skype']));
+	$mobile = htmlspecialchars(stripslashes($_POST['mobile']));
+
+	if (empty($linkedin) || empty($github) || empty($whatsapp) || empty($skype) || empty($mobile)) {
 			$response['message'] = "Field cannot be empty";
 	}
 	else{
+		if (!isset($_POST['social_id'])) {
+			$response['message'] = "Id not found";
+		}
+		
 		$id = filter_input(INPUT_POST, "social_id", FILTER_SANITIZE_NUMBER_INT);
+		// $id = $_GET['id'];
 		$data = [
-			"linkedln" => $linkedln,
+			"linkedln" => $linkedin,
 			"github" => $github,
 			"whatsapp" => $whatsapp,
 			"skype" => $skype,
@@ -26,6 +36,9 @@ if (isset($_POST['editAbout'])) {
 		}
 		elseif ($result == 1) {
 				$response['message'] = "Socials updated successfully!";
+				$response['status'] = 1;
 		}
 	}
 }
+
+echo json_encode($response);

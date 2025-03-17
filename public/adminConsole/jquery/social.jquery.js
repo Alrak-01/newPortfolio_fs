@@ -2,8 +2,16 @@ $(document).ready(function(){
 	$("#editSocialForm").on("submit", function(event){
 		event.preventDefault();
 
+		let param = new URLSearchParams(window.location.search);
+		let social_id = param.get("id");
+
+		if (social_id == null) {
+			window.location.href = "social.php?id=nf";
+		}
+
 		let formData = new FormData(this);
 		formData.append("editSocial", "editSocial");
+		formData.append("social_id", social_id);
 
 		$.ajax({
 			url: "includes/social.inc.php",
@@ -20,6 +28,7 @@ $(document).ready(function(){
 				}
 				else if(response.status == 1){
 					alert(response.message);
+					window.location.href = "social.php?success";
 				}
 			},
 			error : function(){

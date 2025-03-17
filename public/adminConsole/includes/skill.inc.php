@@ -88,6 +88,7 @@ if (isset($_POST['delete_skill']) && isset($_POST['skill_id'])) {
 	}
 	elseif ($result == 1){
 		$response['message'] = "Skill deleted successfully!";
+		$response['status'] = 1;
 	}
 }
 // else{

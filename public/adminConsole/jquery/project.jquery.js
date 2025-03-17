@@ -20,6 +20,7 @@ $(document).ready(function(){
 				}
 				else if(response.status == 1){
 					alert(response.message);
+					window.location.href = "project.php?addsuccess";
 				}
 			},
 			error : function(){
@@ -33,8 +34,16 @@ $(document).ready(function(){
 	$("#editProjectForm").on("submit", function(event){
 		event.preventDefault();
 
+		let param = new URLSearchParams(window.location.search);
+		let project_id = param.get("id");
+
+		if (project_id == null) {
+			window.location.href = "project.php?id=nf";
+		}
+
 		let formData = new FormData(this);
 		formData.append("editProject", "editProject");
+		formData.append("project_id", project_id);
 
 		$.ajax({
 			url : "includes/project.inc.php",
@@ -51,6 +60,7 @@ $(document).ready(function(){
 				}
 				else if(response.status == 1){
 					alert(response.message);
+					window.location.href = "project.php?editsuccess";
 				}
 			},
 			error : function(){

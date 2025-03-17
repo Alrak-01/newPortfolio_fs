@@ -53,7 +53,7 @@
                         </div>
         
                         <div class="button flex items-end lg:justify-end pb-5">
-                            <button type="submit" id="addSkill" name="editSkill" class="text-xs lg:text-sm bg-black text-white py-2 px-4 rounded-md hover:bg-opacity-90">
+                            <button type="submit" id="editSkill" name="editSkill" class="text-xs lg:text-sm bg-black text-white py-2 px-4 rounded-md hover:bg-opacity-90">
                                 Edit
                             </button>
                         </div>

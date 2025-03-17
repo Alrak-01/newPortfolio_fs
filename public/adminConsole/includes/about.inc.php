@@ -12,6 +12,10 @@ if (isset($_POST['editAbout'])) {
 			$response['message'] = "Field cannot be empty";
 	}
 	else{
+		if (!isset($_POST['about_id'])) {
+			$response['message'] = "Id not found";
+		}
+		
 		$id = filter_input(INPUT_POST, "about_id", FILTER_SANITIZE_NUMBER_INT);
 		$data = [
 			"about_me" => $text
@@ -22,6 +26,7 @@ if (isset($_POST['editAbout'])) {
 		}
 		elseif ($result == 1) {
 				$response['message'] = "About Alrak updated successfully!";
+				$response['status'] = 1;
 		}
 	}
 }
