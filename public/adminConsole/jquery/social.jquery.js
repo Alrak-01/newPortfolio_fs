@@ -1,4 +1,26 @@
 $(document).ready(function(){
+	
+	// PULL DATA FROM THE INCLUDE FILE
+		// START
+		function fetchAllData(){
+			$.ajax({
+				url : "includes/social.inc.php",
+				method : "POST",
+				data : {input : ""},
+				dataType : "JSON",
+
+				success : function(response){
+					$("#displaySocial").html(response.data);
+				},
+				error : function(){
+					alert("An error occurred");
+				}
+			});
+		}
+
+		fetchAllData();
+		// END
+
 	$("#editSocialForm").on("submit", function(event){
 		event.preventDefault();
 

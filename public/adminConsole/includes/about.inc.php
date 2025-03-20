@@ -3,7 +3,8 @@ require_once("../../../autoload/autoload.php");
 
 $response = array(
 	"status" => 0,
-	"message" => "Form Submission Failed"
+	"message" => "Form Submission Failed",
+	"data" => ""
 );
 
 if (isset($_POST['editAbout'])) {
@@ -30,5 +31,23 @@ if (isset($_POST['editAbout'])) {
 		}
 	}
 }
+
+if (isset($_POST['input'])) {
+	$input = htmlspecialchars(stripslashes($_POST['input']));
+
+	 if (empty($input)) {
+	 	$result = $about->selectAdmin();
+	 	if ($result == 0) {
+	 		$response['data'] = "No Data Found";
+	 	}
+	 	else {
+	 		while ($rows = $result->fetch(PDO::FETCH_ASSOC)) {
+	 			$response['data'] .= 
+		 			'<p>'.$rows["about_me"].'</p>';
+	 		}
+	 	}
+	 }
+}
+
 
 echo json_encode($response);

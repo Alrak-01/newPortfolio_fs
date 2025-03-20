@@ -7,6 +7,8 @@
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <link rel="stylesheet" href="../../src/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- JQUERY CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>Alrak's portfolio</title>
   </head>
   <body>
@@ -24,48 +26,20 @@
                 <div class="displayCategory pl-5 overflow-hidden">
                     <h1 class="lg:text-xl text-lg font-medium mb-5">All Socials</h1>
                     <div>
-                        <ul class="list-disc text-sm w-full grid lg:grid-cols-3 grid-cols-2 gap-10">
-                            <li class="text-[#3792a5] font-bold w-full">
+                        <ul id="displaySocial" class="list-disc text-sm w-full grid lg:grid-cols-3 grid-cols-2 gap-10">
+                            <!-- <li class="text-[#3792a5] font-bold w-full">
                                 HTML / CSS - 
                                 <span class="pl-3 space-x-2">
                                     <i class="fa-solid fa-square-arrow-up-right text-blue-600"></i>
                                 </span>
-                            </li>
+                            </li> -->
         
-                            <li class="text-[#3792a5] font-bold w-full">
-                                HTML / CSS - 
-                                <span class="pl-3 space-x-2">
-                                    <i class="fa-solid fa-square-arrow-up-right text-blue-600"></i>
-                                </span>
-                            </li>
-        
-                            <li class="font-bold w-full">
-                                JavaScript - 
-                                <span class="pl-3 space-x-2">
-                                    <i class="fa-solid fa-square-arrow-up-right text-blue-600"></i>
-                                </span>
-                            </li>
-        
-                            <li class="font-bold w-full">
+                            <!-- <li class="font-bold w-full">
                                 PHP -
                                 <span class="pl-3 space-x-2">
                                     <i class="fa-solid fa-square-arrow-up-right text-blue-600"></i>
                                 </span>
-                            </li>
-        
-                            <li class="font-bold w-full">
-                                React - 
-                                <span class="pl-3 space-x-2">
-                                    <i class="fa-solid fa-square-arrow-up-right text-blue-600"></i>
-                                </span>
-                            </li>
-        
-                            <li class="font-bold w-full">
-                                HTML / CSS - 
-                                <span class="pl-3 space-x-2">
-                                    <i class="fa-solid fa-square-arrow-up-right text-blue-600"></i>
-                                </span>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -76,4 +50,5 @@
     </div>
 
   </body>
+  <script src="jquery/social.jquery.js"></script>
   </html>

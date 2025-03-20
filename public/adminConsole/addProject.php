@@ -19,7 +19,7 @@
        <?php require_once("header.php"); ?>
         
         <section class="lg:ml-[15vw] pt-10 px-5 lg:h-[91.5vh]">
-            <h1 class="text-xl font-semibold mb-3">Edit Project</h1>
+            <h1 class="text-xl font-semibold mb-3">Add Project</h1>
             <div class="Project bg-white py-5 rounded-lg">
         
                 <div class="project-container">

@@ -1,4 +1,23 @@
 $(document).ready(function(){
+
+	function fetchAllData(){
+		$.ajax({
+			url : "includes/project.inc.php",
+			method : "POST",
+			data : {input : ""},
+			dataType : "JSON",
+
+			success : function(response){
+				$("#displayProject").html(response.data);
+			},
+			error : function(){
+				alert("Ajax error ocurred...");
+			}
+		});
+	}
+
+		fetchAllData();
+
 	$("#addProjectForm").on("submit", function(event){
 		event.preventDefault();
 
@@ -14,8 +33,9 @@ $(document).ready(function(){
 			cache : false,
 			processData : false,
 
-			success : function(response){
+			success : function(response){ 
 				if (response.status == 0) {
+					fetchAllData();
 					alert(response.message);
 				}
 				else if(response.status == 1){

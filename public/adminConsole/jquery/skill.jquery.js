@@ -1,4 +1,27 @@
 $(document).ready(function () {
+
+	// PULL DATA FROM THE INCLUDE FILE
+		// START
+		function fetchAllData(){
+			$.ajax({
+				url : "includes/skill.inc.php",
+				method : "POST",
+				data : {input : ""},
+				dataType : "JSON",
+
+				success : function(response){
+					$("#displaySkill").html(response.data);
+					// console.log(response.data);
+				},
+				error : function(){
+					alert("An error occurred");
+				}
+			});
+		}
+
+		fetchAllData();
+		// END
+
 	$("#skillForm").on('submit', function(e) {
 		e.preventDefault();
 
@@ -19,7 +42,8 @@ $(document).ready(function () {
 					alert(response.message);
 				}
 				else if (response.status == 1) {
-					// alert(response.message);
+					fetchAllData();
+					// TO RELOAD THE DISPLAYED DATA AFTER ADDING NEW SKILL
 					$("#skillForm")[0].reset();
 				}
 			},
@@ -67,28 +91,7 @@ $(document).ready(function () {
 			});
 		});
 
-		// PULL DATA FROM THE INCLUDE FILE
-		// START
-		function fetchAllData(){
-			$.ajax({
-				url : "includes/skill.inc.php",
-				method : "POST",
-				data : {input : ""},
-				dataType : "JSON",
 
-				success : function(response){
-					$("#displaySkill").html(response.data);
-					// console.log(response.data);
-				},
-				error : function(){
-					alert("An error occurred");
-				}
-			});
-		}
-
-		fetchAllData();
-
-		// END
 
 	// ADD AND CLOSE SKILL FORM
 		let skillBtn = $("#addSkillBtn");

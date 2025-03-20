@@ -1,4 +1,24 @@
 $(document).ready(function(){
+
+	function fetchAllData(){
+		$.ajax({
+			url : "includes/about.inc.php",
+			method : "POST",
+			data : {input : ""},
+			dataType : "JSON",
+
+			success : function(response){
+				$("#displayAbout").html(response.data);
+			},
+			error : function(){
+				alert("Ajax error ocurred...");
+			}
+		});
+	}
+
+		fetchAllData();
+
+
 	$("#editAboutForm").on("submit", function(event){
 		event.preventDefault();
 

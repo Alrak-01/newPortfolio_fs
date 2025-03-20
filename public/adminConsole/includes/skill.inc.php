@@ -117,7 +117,7 @@ if (isset($_POST['input'])) {
 		}
 	}
 	else{
-		$response['data'] = "NO Data Found...";
+		$response['data'] = "Error occurred...";
 	}
 }
 echo json_encode($response);

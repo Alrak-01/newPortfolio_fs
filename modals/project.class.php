@@ -6,7 +6,7 @@ class Project extends Database{
   public $db_con;
 
   public function __construct(){
-    $this->tableName;
+    $this->tableName; 
     $this->db_con = self::connect();
   }
 

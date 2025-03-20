@@ -3,7 +3,8 @@ require_once("../../../autoload/autoload.php");
 
 $response = array(
 	"status" => 0,
-	"message" => "Form Submission Failed"
+	"message" => "Form Submission Failed",
+	"data" => ""
 );
 
 if (isset($_POST['editSocial'])) {
@@ -38,6 +39,61 @@ if (isset($_POST['editSocial'])) {
 				$response['message'] = "Socials updated successfully!";
 				$response['status'] = 1;
 		}
+	}
+}
+
+if (isset($_POST['input'])) {
+    $input = htmlspecialchars(stripslashes($_POST['input']));
+
+	if (empty($input)) {
+
+		$result = $social->selectAdmin();
+		if ($result == 0) {
+			$response['message'] = "No Data Found...";
+		}
+		else {
+				if ($rows = $result->fetch(PDO::FETCH_ASSOC)) {
+				 $response['data'] .= 
+					 	'<li class="font-bold w-full">
+		                         Github -
+                                <span class="pl-3 space-x-2">
+                                    <a href="'.$rows["github"].'"><i class="fa-solid fa-square-arrow-up-right text-blue-600"></i></a>
+                                </span>
+                            </li>
+
+                            <li class="font-bold w-full">
+		                         Linkedln -
+                                <span class="pl-3 space-x-2">
+                                    <a href="'.$rows["linkedln"].'"><i class="fa-solid fa-square-arrow-up-right text-blue-600"></i></a>
+                                </span>
+                            </li>
+
+                            <li class="font-bold w-full">
+		                         Skype -
+                                <span class="pl-3 space-x-2">
+                                    <a href="'.$rows["skype"].'"><i class="fa-solid fa-square-arrow-up-right text-blue-600"></i></a>
+                                </span>
+                            </li>
+
+                            <li class="font-bold w-full">
+		                         Whatsapp -
+                                <span class="pl-3 space-x-2">
+                                    <a href="'.$rows["whatsapp"].'"><i class="fa-solid fa-square-arrow-up-right text-blue-600"></i></a>
+                                </span>
+                            </li>
+
+                            <li class="font-bold w-full">
+		                         E-mail -
+                                <span class="pl-3 space-x-2">
+                                    <a href="'.$rows["email"].'"><i class="fa-solid fa-square-arrow-up-right text-blue-600"></i></a>
+                                </span>
+                            </li>
+                            ';
+			}
+		}
+	}
+	else{
+		$response['data'] = "Error occurred...";
 	}
 }
 
