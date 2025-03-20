@@ -19,7 +19,7 @@ $(document).ready(function () {
 					alert(response.message);
 				}
 				else if (response.status == 1) {
-					alert(response.message);
+					// alert(response.message);
 					$("#skillForm")[0].reset();
 				}
 			},
@@ -29,7 +29,6 @@ $(document).ready(function () {
 		});
 	});
 
-	$(document).ready(function(){
 		$("#editSkillForm").on("submit", function(event){
 			event.preventDefault();
 
@@ -67,5 +66,40 @@ $(document).ready(function () {
 				}
 			});
 		});
-	});
+
+		// PULL DATA FROM THE INCLUDE FILE
+		// START
+		function fetchAllData(){
+			$.ajax({
+				url : "includes/skill.inc.php",
+				method : "POST",
+				data : {input : ""},
+				dataType : "JSON",
+
+				success : function(response){
+					$("#displaySkill").html(response.data);
+					// console.log(response.data);
+				},
+				error : function(){
+					alert("An error occurred");
+				}
+			});
+		}
+
+		fetchAllData();
+
+		// END
+
+	// ADD AND CLOSE SKILL FORM
+		let skillBtn = $("#addSkillBtn");
+		let skillContainer = $("#addSkillContainer");
+		let status = false;
+		
+		skillBtn.on("click", function(){
+			skillContainer.hasClass("hidden") ? skillBtn.html("Close Form") : skillBtn.html("Open Form");
+			setTimeout(function(){
+				skillContainer.toggleClass("hidden");
+			}, 300)
+		})
+		
 });

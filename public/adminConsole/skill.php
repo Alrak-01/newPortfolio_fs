@@ -19,10 +19,12 @@
        <?php require_once("header.php"); ?>
         
         <section class="lg:ml-[15vw] pt-10 px-5 lg:h-[91.5vh]">
-            <h1 class="text-xl font-semibold mb-3">Skills</h1>
+            <div class="flex items-center justify-between mb-5">
+                <h1 class='text-xl font-semibold mb-3'>Skills</h1>
+                <button id="addSkillBtn" class="text-sm bg-black text-white py-2 px-4 rounded-md hover:bg-opacity-90">Open Form</button>
+            </div>
             <div class="skill bg-white py-5 rounded-lg">
-        
-                <div class="skill-container">
+                <div class="skill-container hidden transition delay-75 duration-300 ease-in-out" id="addSkillContainer">
                     <form id="skillForm" class="rounded-md grid gap-3 text-sm lg:text-lg hiden">
                         <div class="grid lg:grid-cols-3 space-y-4 lg:space-y-0 lg:gap-5">
                             <div class="category grid lg:gap-2">
@@ -62,60 +64,15 @@
                 <div class="displayCategory pl-5 overflow-hidden">
                     <h1 class="lg:text-xl text-lg font-medium mb-5">All Skills</h1>
                     <div>
-                        <ul class="list-disc text-sm w-full grid lg:grid-cols-3 grid-cols-2 gap-10">
-                            <li class="text-[#3792a5] font-bold w-full">
+                        <ul class="list-disc text-sm w-full grid lg:grid-cols-3 grid-cols-2 gap-10" id="displaySkill">
+                            <!-- <li class="text-[#3792a5] font-bold w-full">
                                 HTML / CSS - 
                                 <span>3 years</span>
                                 <span class="pl-3 space-x-2">
                                     <a href="#"><i class="fa-solid fa-trash text-red-600"></i></a>
                                     <a href="editSkill.php"><i class="fa-solid fa-pen-to-square text-blue-600"></i></a>
                                 </span>
-                            </li>
-        
-                            <li class="text-[#3792a5] font-bold w-full">
-                                HTML / CSS - 
-                                <span>3 years</span>
-                                <span class="pl-3 space-x-2">
-                                    <a href="#"><i class="fa-solid fa-trash text-red-600"></i></a>
-                                    <a href="editSkill.php"><i class="fa-solid fa-pen-to-square text-blue-600"></i></a>
-                                </span>
-                            </li>
-        
-                            <li class="text-[#3792a5] font-bold w-full">
-                                JavaScript - 
-                                <span>3 years</span>
-                                <span class="pl-3 space-x-2">
-                                   <a href="#"><i class="fa-solid fa-trash text-red-600"></i></a>
-                                    <a href="editSkill.php"><i class="fa-solid fa-pen-to-square text-blue-600"></i></a>
-                                </span>
-                            </li>
-        
-                            <li class="text-[#3792a5] font-bold w-full">
-                                PHP -
-                                <span>3 years</span>
-                                <span class="pl-3 space-x-2">
-                                    <i class="fa-solid fa-trash text-red-600"></i>
-                                    <i class="fa-solid fa-pen-to-square text-blue-600"></i>
-                                </span>
-                            </li>
-        
-                            <li class="text-[#3792a5] font-bold w-full">
-                                React - 
-                                <span>3 years</span>
-                                <span class="pl-3 space-x-2">
-                                    <i class="fa-solid fa-trash text-red-600"></i>
-                                    <i class="fa-solid fa-pen-to-square text-blue-600"></i>
-                                </span>
-                            </li>
-        
-                            <li class="text-[#3792a5] font-bold w-full">
-                                HTML / CSS - 
-                                <span>3 years</span>
-                                <span class="pl-3 space-x-2">
-                                    <i class="fa-solid fa-trash text-red-600"></i>
-                                    <i class="fa-solid fa-pen-to-square text-blue-600"></i>
-                                </span>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>

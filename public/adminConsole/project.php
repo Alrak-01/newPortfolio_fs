@@ -21,7 +21,7 @@
             <div class="flex items-center justify-between mb-5">
                 <h1 class='text-xl font-semibold mb-3'>Projects</h1>
                 <a href="addProject.php" class="text-sm bg-black text-white py-2 px-4 rounded-md hover:bg-opacity-90">Add Project</a>
-                </div>
+            </div>
 
             <div class="cards bg-white dark:bg-opacity-10 rounded-lg py-10 px-5 lg:grid space-y-5 lg:space-y-0 grid-cols-4 lg:gap-5">
                 

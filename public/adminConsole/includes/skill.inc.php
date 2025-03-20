@@ -3,7 +3,8 @@ require_once("../../../autoload/autoload.php");
 
 $response = array(
 	"status" => 0,
-	"message" => "Form Submission Failed"
+	"message" => "Form Submission Failed",
+	"data" => ""
 );
 
 if (isset($_POST['addSkill'])) {
@@ -91,9 +92,33 @@ if (isset($_POST['delete_skill']) && isset($_POST['skill_id'])) {
 		$response['status'] = 1;
 	}
 }
-// else{
-// 	$response['message'] = "POST error or ID not found...";
-// }
 
+if (isset($_POST['input'])) {
+    $input = htmlspecialchars(stripslashes($_POST['input']));
+
+	if (empty($input)) {
+
+		$result = $skill->selectSkill();
+		if ($result == 0) {
+			$response['message'] = "No Data Found...";
+		}
+		else {
+			while ($rows = $result->fetch(PDO::FETCH_ASSOC)) {
+			 $response['data'] .= 
+			 	'<li class="text-[#3792a5] font-bold w-full">
+                       	'.$rows["name"].' - 
+                        <span>'.$rows["experience"].'</span>
+                        <span class="pl-3 space-x-2">
+                            <a href="#"><i class="fa-solid fa-trash text-red-600"></i></a>
+                            <a href="editSkill.php?skill_id='.$rows["id"].'"><i class="fa-solid fa-pen-to-square text-blue-600"></i></a>
+                        </span>
+                  </li>';
+			}
+		}
+	}
+	else{
+		$response['data'] = "NO Data Found...";
+	}
+}
 echo json_encode($response);
 
