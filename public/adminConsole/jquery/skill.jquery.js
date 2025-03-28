@@ -96,8 +96,6 @@ $(document).ready(function () {
 	// ADD AND CLOSE SKILL FORM
 		let skillBtn = $("#addSkillBtn");
 		let skillContainer = $("#addSkillContainer");
-		let status = false;
-		
 		skillBtn.on("click", function(){
 			skillContainer.hasClass("hidden") ? skillBtn.html("Close Form") : skillBtn.html("Open Form");
 			setTimeout(function(){

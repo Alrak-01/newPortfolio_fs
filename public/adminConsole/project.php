@@ -23,20 +23,23 @@
             <a href="addProject.php" class="text-sm bg-black text-white py-2 px-4 rounded-md hover:bg-opacity-90">Add Project</a> 
         </div>
 
-        <div class="cards bg-white dark:bg-opacity-10 rounded-lg py-10 lg:px-5 lg:grid space-y-5 lg:space-y-0 grid-cols-4 lg:gap-5 overflow-y-scroll lg:h-[90%] h-[75vh]" id="displayProject">
+        <div class="relative  cards bg-white dark:bg-opacity-10 rounded-lg py-10 lg:px-5 lg:grid space-y-5 lg:space-y-0 grid-cols-4 lg:gap-5 overflow-y-scroll lg:h-[87%] h-[75vh]" id="displayProject">
             
             <!-- <div class="card w-full h-36 grid p-3 font-semibold shadow-lg rounded-md border dark:border-stone-800">
-                <h3>Rasmat limited</h3>
+                <div class="flex items-center justify-between pb-5">
+                    <h3>Rasmat limited</h3>
+                    <span id="menu absolute">
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        
+                    </span>
+                </div>
                 <span class="text-center">Frontend</span>
                 <span class="text-right text-slate-600 hover:text-slate-900 dark:hover:text-slate-700 focus:text-slate-900 duration-300 delay-100 transition-colors ease-in-out space-x-2">2024</span>
             </div> -->
-
-            <!-- <div class="card w-full h-36 grid p-3 font-semibold shadow-lg rounded-md border dark:border-stone-800">
-                <h3>Rasmat limited</h3>
-                <span class="text-center">Frontend</span>
-                <span class="text-right text-slate-600 hover:text-slate-900 dark:hover:text-slate-700 focus:text-slate-900 duration-300 delay-100 transition-colors ease-in-out space-x-2">2024</span>
-            </div> -->
-    
+            <!-- <span class="text-xs">
+                    <i class="fa-solid fa-pencil"></i>
+                    <i class="fa-solid fa-trash"></i>
+             </span> -->
         </div>
     </section>
         

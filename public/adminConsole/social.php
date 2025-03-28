@@ -19,12 +19,57 @@
 
         <section class="lg:ml-[15vw] pt-10 px-5 lg:h-[91.5vh]">
             <div class="flex items-center justify-between ">
-                <h1 class="text-xl font-semibold mb-3">My Social</h1>
-                    <a href="editSocial.php" class="text-xs lg:text-sm bg-black text-white py-2 px-4 rounded-md hover:bg-opacity-90"> Edit </a>
+                <h1 class="text-xl font-semibold mb-3">All Socials</h1>
+                    <button id="editSocialBtn" class="text-sm bg-black text-white py-2 px-4 rounded-md hover:bg-opacity-90">Open Form</button>
             </div>
             <div class="skill bg-white py-5 rounded-lg">
                 <div class="displayCategory pl-5 overflow-hidden">
-                    <h1 class="lg:text-xl text-lg font-medium mb-5">All Socials</h1>
+
+                    <div class="Social-container hidden" id="editSocialContainer">
+                    <form id="editSocialForm" class="rounded-md grid gap-3 text-sm lg:text-lg">
+                        <div class="grid lg:grid-cols-3 space-y-4 lg:space-y-0 lg:gap-5">
+                            <div class="linkedin grid lg:gap-2">
+                                <label for="linkedin" class="font-semibold">
+                                    Linkedin <span class="text-red-600 text-sm">*</span>
+                                </label>
+                                <input type="text" placeholder="Linkedin" id="linkedin" name="linkedin" class="border border-gray-300 p-2 text-sm rounded-md outline-none focus:border-green-900 transition-all duration-300 delay-75" spellcheck="false" >
+                            </div>
+
+                            <div class="github grid lg:gap-2">
+                                <label for="github" class="font-semibold">
+                                    Github <span class="text-red-600 text-sm">*</span>
+                                </label>
+                                <input type="text" placeholder="Github" id="github" name="github" class="border border-gray-300 p-2 text-sm rounded-md outline-none focus:border-green-900 transition-all duration-300 delay-75" spellcheck="false" >
+                            </div>
+
+                            <div class="whatsapp grid lg:gap-2">
+                                <label for="whatsapp" class="font-semibold">
+                                    Whatsapp <span class="text-red-600 text-sm">*</span>
+                                </label>
+                                <input type="text" placeholder="Whatsapp" id="whatsapp" name="whatsapp" class="border border-gray-300 p-2 text-sm rounded-md outline-none focus:border-green-900 transition-all duration-300 delay-75" spellcheck="false" >
+                            </div>
+
+                            <div class="skype grid lg:gap-2">
+                                <label for="skype" class="font-semibold">
+                                    Skype <span class="text-red-600 text-sm">*</span>
+                                </label>
+                                <input type="text" placeholder="Skype" id="skype" name="skype" class="border border-gray-300 p-2 text-sm rounded-md outline-none focus:border-green-900 transition-all duration-300 delay-75" spellcheck="false" >
+                            </div>
+
+                            <div class="mobile grid lg:gap-2">
+                                <label for="mobile" class="font-semibold">
+                                    Mobile <span class="text-red-600 text-sm">*</span>
+                                </label>
+                                <input type="text" placeholder="Mobile" id="mobile" name="mobile" class="border border-gray-300 p-2 text-sm rounded-md outline-none focus:border-green-900 transition-all duration-300 delay-75" spellcheck="false" >
+                            </div>
+                        </div>
+                        <div class="button flex items-end lg:justify-end pb-10">
+                            <button type="submit" id="editSocial" name="editSocial" class="text-xs lg:text-sm bg-black text-white py-2 px-4 rounded-md hover:bg-opacity-90">
+                                Edit
+                            </button>
+                        </div>
+                    </form>
+                </div>
                     <div>
                         <ul id="displaySocial" class="list-disc text-sm w-full grid lg:grid-cols-3 grid-cols-2 gap-10">
                             <!-- <li class="text-[#3792a5] font-bold w-full">

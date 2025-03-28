@@ -23,8 +23,6 @@
             <div class="social bg-white py-5 rounded-lg">
         
                 <div class="Social-container">
-                    <!-- <form action="includes/Social.inc.php?id=1" method="post" id="editSocialForm" class="rounded-md grid gap-3 text-sm lg:text-lg"> -->
-
                     <form id="editSocialForm" class="rounded-md grid gap-3 text-sm lg:text-lg">
                         <div class="grid lg:grid-cols-3 space-y-4 lg:space-y-0 lg:gap-5">
                             <div class="linkedin grid lg:gap-2">

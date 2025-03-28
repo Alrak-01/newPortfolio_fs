@@ -1,5 +1,5 @@
 <?php
-include("../../../config/database.php");
+  include("../../../config/database.php");
 
 // AUTOLOADER FUNCTION
 spl_autoload_register('myAutoloader');
@@ -8,6 +8,7 @@ function myAutoloader($className){
   $url = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
   if (strpos($url, 'includes') !== false) {
+
       $path = "../../../modals/";
   }
   else {

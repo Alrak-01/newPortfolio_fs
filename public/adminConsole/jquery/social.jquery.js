@@ -58,5 +58,15 @@ $(document).ready(function(){
 			}
 
 		});
-	})
+	});
+
+		// ADD AND CLOSE SOCIAL FORM
+		let skillBtn = $("#editSocialBtn");
+		let skillContainer = $("#editSocialContainer");
+		skillBtn.on("click", function(){
+			skillContainer.hasClass("hidden") ? skillBtn.html("Close Form") : skillBtn.html("Open Form");
+			setTimeout(function(){
+				skillContainer.toggleClass("hidden");
+			}, 300)
+		})
 });
