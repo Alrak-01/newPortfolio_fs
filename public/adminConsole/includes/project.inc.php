@@ -4,7 +4,7 @@ require_once("../../../autoload/autoload.php");
 $response = array(
 	"message" => "Form Submission Failed",
 	"status" => 0,
-	"data" => ""
+	"data" => []
 );
  
 if (isset($_POST['addProject'])) {
@@ -59,6 +59,30 @@ if (isset($_POST['editProject'])) {
 		}
 }
 
+if (isset($_POST['input'])) {
+	$input = htmlspecialchars(stripslashes($_POST['input']));
+
+	 if (empty($input)) {
+	 	$result = $project->selectProject();
+	 	if ($result == 0) {
+	 		$response['data'] = "No Data Found";
+	 	}
+	 	else {
+	 		while ($rows = $result->fetch(PDO::FETCH_ASSOC)) {
+	 			$response['data'][] = [
+	 				'title' => $rows['title'],
+	 				'stack' => $rows['stack'],
+	 				'date' => $rows['date'],
+	 				'id' => $rows['id']
+	 			];
+	 		}
+	 	}
+	 }
+	 else{
+		$response['data'] = "Error occurred...";
+	 }
+}
+
 // if (isset($_POST['delete_project']) && isset($_POST['project_id'])) {
 // 	$id = filter_input(INPUT_POST, "project_id", FILTER_SANITIZER_NUMBER_INT);
 // 	$result = $project->deleteProject($id);
@@ -74,29 +98,6 @@ if (isset($_POST['editProject'])) {
 // 	$response['message'] = "POST error or ID not found...";
 // }
 
-if (isset($_POST['input'])) {
-	$input = htmlspecialchars(stripslashes($_POST['input']));
-
-	 if (empty($input)) {
-	 	$result = $project->selectProject();
-	 	if ($result == 0) {
-	 		$response['data'] = "No Data Found";
-	 	}
-	 	else {
-	 		while ($rows = $result->fetch(PDO::FETCH_ASSOC)) {
-	 			$response['data'] .= 
-		 			'<div class="card w-full h-36 grid p-3 font-semibold shadow-lg rounded-md border dark:border-stone-800">
-	                <h3>'.$rows["title"].'</h3>
-	                <span class="text-center">'.$rows["stack"].'</span>
-	                <span class="text-right text-slate-600 hover:text-slate-900 dark:hover:text-slate-700 focus:text-slate-900 duration-300 delay-100 transition-colors ease-in-out space-x-2">'.$rows["date"].'</span>
-	            	</div>';
-	 		}
-	 	}
-	 }
-	 else{
-		$response['data'] = "Error occurred...";
-	 }
-}
 
 
 echo json_encode($response);

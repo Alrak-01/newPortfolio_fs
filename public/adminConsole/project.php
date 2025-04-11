@@ -10,7 +10,7 @@
     <!-- JQUERY CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>Alrak's portfolio</title>
-  </head>
+  </head> 
   <body>
     <div class="wrapper">
     <?php require_once("sidebar.php"); ?>
@@ -25,7 +25,7 @@
 
         <div class="relative  cards bg-white dark:bg-opacity-10 rounded-lg py-10 lg:px-5 lg:grid space-y-5 lg:space-y-0 grid-cols-4 lg:gap-5 overflow-y-scroll lg:h-[87%] h-[75vh]" id="displayProject">
             
-            <!-- <div class="card w-full h-36 grid p-3 font-semibold shadow-lg rounded-md border dark:border-stone-800">
+           <!--  <div class="card w-full h-36 grid p-3 font-semibold shadow-lg rounded-md border dark:border-stone-800">
                 <div class="flex items-center justify-between pb-5">
                     <h3>Rasmat limited</h3>
                     <span id="menu absolute">
@@ -36,7 +36,7 @@
                 <span class="text-center">Frontend</span>
                 <span class="text-right text-slate-600 hover:text-slate-900 dark:hover:text-slate-700 focus:text-slate-900 duration-300 delay-100 transition-colors ease-in-out space-x-2">2024</span>
             </div> -->
-            <!-- <span class="text-xs">
+             <!-- <span class="text-xs">
                     <i class="fa-solid fa-pencil"></i>
                     <i class="fa-solid fa-trash"></i>
              </span> -->

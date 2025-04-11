@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
 	// PULL DATA FROM THE INCLUDE FILE
 		// START
 		function fetchAllData(){
@@ -10,8 +9,26 @@ $(document).ready(function () {
 				dataType : "JSON",
 
 				success : function(response){
-					$("#displaySkill").html(response.data);
-					// console.log(response.data);
+					let content = "";
+					if (response.data && response.data.length > 0) {
+						response.data.forEach(function(project) {
+							content += `
+									<li class="text-[#3792a5] font-bold w-full">
+		                                HTML / CSS - 
+		                                <span>3 years</span>
+		                                <span class="pl-3 space-x-2">
+		                                    <a href="#"><i class="fa-solid fa-trash text-red-600"></i></a>
+		                                    <a href="editSkill.php"><i class="fa-solid fa-pen-to-square text-blue-600"></i></a>
+		                                </span>
+		                            </li>
+							`;
+					});
+					}
+					else {
+					$("#displaySkill").html("No data Found....");
+
+					}
+					$("#displaySkill").html(content);
 				},
 				error : function(){
 					alert("An error occurred");
@@ -19,7 +36,7 @@ $(document).ready(function () {
 			});
 		}
 
-		fetchAllData();
+		fetchAllData(); 
 		// END
 
 	$("#skillForm").on('submit', function(e) {

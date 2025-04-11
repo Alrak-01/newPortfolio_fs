@@ -4,7 +4,7 @@ require_once("../../../autoload/autoload.php");
 $response = array(
 	"status" => 0,
 	"message" => "Form Submission Failed",
-	"data" => ""
+	"data" => []
 );
 
 if (isset($_POST['addSkill'])) {
@@ -28,7 +28,7 @@ if (isset($_POST['addSkill'])) {
 				default:
 					$digitType = 0;
 					break;
-			}
+			} 
 
 			$result = $skill->createSkill($name, $experience, $digitType);
 			if ($result == 0) {
@@ -104,15 +104,19 @@ if (isset($_POST['input'])) {
 		}
 		else {
 			while ($rows = $result->fetch(PDO::FETCH_ASSOC)) {
-			 $response['data'] .= 
-			 	'<li class="text-[#3792a5] font-bold w-full">
-                       	'.$rows["name"].' - 
-                        <span>'.$rows["experience"].'</span>
-                        <span class="pl-3 space-x-2">
-                            <a href="#"><i class="fa-solid fa-trash text-red-600"></i></a>
-                            <a href="editSkill.php?skill_id='.$rows["id"].'"><i class="fa-solid fa-pen-to-square text-blue-600"></i></a>
-                        </span>
-                  </li>';
+			 $response['data'][] = [
+			 	'name' => $rows['name'],
+			 	'experience' => $rows['experience'],
+			 	'id' => $rows['id']
+			 ]; 
+			 	// '<li class="text-[#3792a5] font-bold w-full">
+                //        	'.$rows["name"].' - 
+                //         <span>'.$rows["experience"].'</span>
+                //         <span class="pl-3 space-x-2">
+                //             <a href="#"><i class="fa-solid fa-trash text-red-600"></i></a>
+                //             <a href="editSkill.php?skill_id='.$rows["id"].'"><i class="fa-solid fa-pen-to-square text-blue-600"></i></a>
+                //         </span>
+                //   </li>';
 			}
 		}
 	}

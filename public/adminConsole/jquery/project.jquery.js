@@ -3,12 +3,32 @@ $(document).ready(function(){
 	function fetchAllData(){
 		$.ajax({
 			url : "includes/project.inc.php",
-			method : "POST",
+			method : "POST", 
 			data : {input : ""},
 			dataType : "JSON",
 
 			success : function(response){
-				$("#displayProject").html(response.data);
+				let content = '';
+				if (response.data && response.data.length > 0) {
+                response.data.forEach(function(project) {
+                content += `<div class="card w-full h-36 grid p-3 font-semibold shadow-lg rounded-md border dark:border-stone-800">
+			                	<div class="flex items-center justify-between pb-5">
+			                    <h3>${project.title}</h3>
+			                    <span id="menu absolute">
+			                        <i class="fa-solid fa-ellipsis-vertical"></i>
+			                    </span>
+				                </div>
+				                <span class="text-center">${project.stack}</span>
+				                <span class="text-right text-slate-600 hover:text-slate-900 dark:hover:text-slate-700 focus:text-slate-900 duration-300 delay-100 transition-colors ease-in-out space-x-2">
+				                ${project.date}
+				                </span>
+				            </div>`;
+                });
+            } else {
+                $("#displayProject").html("No Project Found...");
+            }
+            // DISPLAY THE LOOPED DATA INTO THE HTML ELEMENT
+            $("#displayProject").html(content);
 			},
 			error : function(){
 				alert("Ajax error ocurred...");

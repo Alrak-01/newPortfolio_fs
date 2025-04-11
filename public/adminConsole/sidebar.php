@@ -1,4 +1,4 @@
- <section class="sidebar lg:h-screen h-auto lg:w-[15vw] py-3 lg:border-r bg-zinc-100 dark:bg-black dark:border-stone-900 absolute">
+ <section class="sidebar lg:h-screen h-auto lg:w-[15vw] py-3 lg:border-r bg-zinc-100 dark:bg-black dark:border-stone-900 absolute hidden lg:block">
             <div class="flex items-center justify-center gap-4 px-2 lg:px-0 text-sm lg:text-md">
                 <h3 class="text-center font-serif italic font-bold">Alrak</h3>
                 <span>

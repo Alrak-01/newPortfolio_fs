@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="light">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/public/images/img1.png" />
@@ -13,7 +13,7 @@
     <div class='dark:bg-black dark:text-white bg-zinc-200 h-auto z-10'>
         
        <?php include("header.php");?>
-
+ 
         <div class='lg:px-48 lg:pt-16 pt-10 px-2'>
           <h1 class='lg:text-4xl text-3xl text-gray-900 dark:text-white font-medium pb-6'>About Me.</h1>
           <h1>{props.contact}</h1>

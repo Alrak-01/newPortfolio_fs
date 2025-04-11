@@ -12,7 +12,7 @@
     <title>Alrak's portfolio</title>
   </head>
   <body>
-
+ 
     <div>
        <?php require_once("sidebar.php"); ?>
      
