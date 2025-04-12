@@ -4,7 +4,7 @@ require_once("../../../autoload/autoload.php");
 $response = array(
 	"status" => 0,
 	"message" => "Form Submission Failed",
-	"data" => ""
+	"data" => []
 );
 
 if (isset($_POST['editAbout'])) {
@@ -42,8 +42,7 @@ if (isset($_POST['input'])) {
 	 	}
 	 	else {
 	 		while ($rows = $result->fetch(PDO::FETCH_ASSOC)) {
-	 			$response['data'] .= 
-		 			'<p>'.$rows["about_me"].'</p>';
+	 			$response['data'] =  $rows['about_me'];
 	 		}
 	 	}
 	 }

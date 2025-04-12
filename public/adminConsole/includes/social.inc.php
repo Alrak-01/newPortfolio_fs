@@ -4,7 +4,7 @@ require_once("../../../autoload/autoload.php");
 $response = array(
 	"status" => 0,
 	"message" => "Form Submission Failed",
-	"data" => ""
+	"data" => []
 );
 
 if (isset($_POST['editSocial'])) {
@@ -53,42 +53,49 @@ if (isset($_POST['input'])) {
 		}
 		else {
 				if ($rows = $result->fetch(PDO::FETCH_ASSOC)) {
-				 $response['data'] .= 
-					 	'<li class="font-bold w-full">
-		                         Github -
-                                <span class="pl-3 space-x-2">
-                                    <a href="'.$rows["github"].'"><i class="fa-solid fa-square-arrow-up-right text-blue-600"></i></a>
-                                </span>
-                            </li>
+					$response['data'][] = [
+						"github" => $rows['github'],
+						"linkedln" => $rows['linkedln'],
+						"skype" => $rows['skype'],
+						"email" => $rows['email'],
+						"whatsapp" => $rows['whatsapp']
+					];
+				 // $response['data'] .= 
+				// 	 	'<li class="font-bold w-full">
+		         //                 Github -
+                 //                <span class="pl-3 space-x-2">
+                 //                    <a href="'.$rows["github"].'"><i class="fa-solid fa-square-arrow-up-right text-blue-600"></i></a>
+                 //                </span>
+                 //            </li>
 
-                            <li class="font-bold w-full">
-		                         Linkedln -
-                                <span class="pl-3 space-x-2">
-                                    <a href="'.$rows["linkedln"].'"><i class="fa-solid fa-square-arrow-up-right text-blue-600"></i></a>
-                                </span>
-                            </li>
+                 //            <li class="font-bold w-full">
+		         //                 Linkedln -
+                 //                <span class="pl-3 space-x-2">
+                 //                    <a href="'.$rows["linkedln"].'"><i class="fa-solid fa-square-arrow-up-right text-blue-600"></i></a>
+                 //                </span>
+                 //            </li>
 
-                            <li class="font-bold w-full">
-		                         Skype -
-                                <span class="pl-3 space-x-2">
-                                    <a href="'.$rows["skype"].'"><i class="fa-solid fa-square-arrow-up-right text-blue-600"></i></a>
-                                </span>
-                            </li>
+                 //            <li class="font-bold w-full">
+		         //                 Skype -
+                 //                <span class="pl-3 space-x-2">
+                 //                    <a href="'.$rows["skype"].'"><i class="fa-solid fa-square-arrow-up-right text-blue-600"></i></a>
+                 //                </span>
+                 //            </li>
 
-                            <li class="font-bold w-full">
-		                         Whatsapp -
-                                <span class="pl-3 space-x-2">
-                                    <a href="'.$rows["whatsapp"].'"><i class="fa-solid fa-square-arrow-up-right text-blue-600"></i></a>
-                                </span>
-                            </li>
+                 //            <li class="font-bold w-full">
+		         //                 Whatsapp -
+                 //                <span class="pl-3 space-x-2">
+                 //                    <a href="'.$rows["whatsapp"].'"><i class="fa-solid fa-square-arrow-up-right text-blue-600"></i></a>
+                 //                </span>
+                 //            </li>
 
-                            <li class="font-bold w-full">
-		                         E-mail -
-                                <span class="pl-3 space-x-2">
-                                    <a href="'.$rows["email"].'"><i class="fa-solid fa-square-arrow-up-right text-blue-600"></i></a>
-                                </span>
-                            </li>
-                            ';
+                 //            <li class="font-bold w-full">
+		         //                 E-mail -
+                 //                <span class="pl-3 space-x-2">
+                 //                    <a href="'.$rows["email"].'"><i class="fa-solid fa-square-arrow-up-right text-blue-600"></i></a>
+                 //                </span>
+                 //            </li>
+                 //            ';
 			}
 		}
 	}

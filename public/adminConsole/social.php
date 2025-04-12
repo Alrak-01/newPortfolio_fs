@@ -46,7 +46,7 @@
                                 <label for="whatsapp" class="font-semibold">
                                     Whatsapp <span class="text-red-600 text-sm">*</span>
                                 </label>
-                                <input type="text" placeholder="Whatsapp" id="whatsapp" name="whatsapp" class="border border-gray-300 p-2 text-sm rounded-md outline-none focus:border-green-900 transition-all duration-300 delay-75" spellcheck="false" >
+                                <input type="text" placeholder="Whatsapp" id="whatsapp" name="whatsapp" class="border border-gray-300 p-2 text-sm rounded-md outline-none focus:border-green-900 transition-all duration-300 delay-75" spellcheck="false">
                             </div>
 
                             <div class="skype grid lg:gap-2">
@@ -72,6 +72,40 @@
                 </div>
                     <div>
                         <ul id="displaySocial" class="list-disc text-sm w-full grid lg:grid-cols-3 grid-cols-2 gap-10">
+                           <!--  <li class="font-bold w-full">
+                                  Github -
+                                 <span id="github" class="pl-3 space-x-2">
+                                     <a href="#"><i class="fa-solid fa-square-arrow-up-right text-blue-600"></i></a>
+                                 </span>
+                            </li>
+                            <li class="font-bold w-full">
+                                  Linkedln -
+                                 <span id="linkedin" class="pl-3 space-x-2">
+                                     <a href="#"><i class="fa-solid fa-square-arrow-up-right text-blue-600"></i></a>
+                              </span>
+                             </li>
+
+                             <li class="font-bold w-full">
+                                  Skype -
+                                 <span id="skype" class="pl-3 space-x-2">
+                                     <a href="#"><i class="fa-solid fa-square-arrow-up-right text-blue-600"></i></a>
+                               </span>
+                            </li>
+
+                            <li class="font-bold w-full">
+                                  Whatsapp -
+                                 <span id="whatsapp" class="pl-3 space-x-2">
+                                     <a href="#"><i class="fa-solid fa-square-arrow-up-right text-blue-600"></i></a>
+                                 </span>
+                             </li>
+
+                             <li class="font-bold w-full">
+                                  E-mail -
+                                 <span id="email" class="pl-3 space-x-2">
+                                     <a href="#"><i class="fa-solid fa-square-arrow-up-right text-blue-600"></i></a>
+                                 </span>
+                             </li> -->
+
                             <!-- <li class="text-[#3792a5] font-bold w-full">
                                 HTML / CSS - 
                                 <span class="pl-3 space-x-2">

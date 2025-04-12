@@ -11,21 +11,21 @@ $(document).ready(function () {
 				success : function(response){
 					let content = "";
 					if (response.data && response.data.length > 0) {
-						response.data.forEach(function(project) {
+						response.data.forEach(function(skill) {
 							content += `
 									<li class="text-[#3792a5] font-bold w-full">
-		                                HTML / CSS - 
-		                                <span>3 years</span>
+		                                ${skill.name} 
+		                                <span>${skill.experience} years</span>
 		                                <span class="pl-3 space-x-2">
 		                                    <a href="#"><i class="fa-solid fa-trash text-red-600"></i></a>
 		                                    <a href="editSkill.php"><i class="fa-solid fa-pen-to-square text-blue-600"></i></a>
 		                                </span>
-		                            </li>
+		                            </li> 
 							`;
 					});
 					}
 					else {
-					$("#displaySkill").html("No data Found....");
+						content = "No skill Found...";
 
 					}
 					$("#displaySkill").html(content);

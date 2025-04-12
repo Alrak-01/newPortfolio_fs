@@ -1,10 +1,11 @@
 $(document).ready(function(){
 
+	// DISPLAY PROJECT STARTS...
 	function fetchAllData(){
 		$.ajax({
 			url : "includes/project.inc.php",
 			method : "POST", 
-			data : {input : ""},
+			data : {input : ""}, 
 			dataType : "JSON",
 
 			success : function(response){
@@ -25,7 +26,7 @@ $(document).ready(function(){
 				            </div>`;
                 });
             } else {
-                $("#displayProject").html("No Project Found...");
+                content = "No Project Found...";
             }
             // DISPLAY THE LOOPED DATA INTO THE HTML ELEMENT
             $("#displayProject").html(content);
@@ -37,7 +38,9 @@ $(document).ready(function(){
 	}
 
 		fetchAllData();
+	// DISPLAY PROJECT ENDS...
 
+		// ADD PROJECT STARTS...
 	$("#addProjectForm").on("submit", function(event){
 		event.preventDefault();
 

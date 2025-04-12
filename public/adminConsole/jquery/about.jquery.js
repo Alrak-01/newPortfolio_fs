@@ -8,7 +8,15 @@ $(document).ready(function(){
 			dataType : "JSON",
 
 			success : function(response){
-				$("#displayAbout").html(response.data);
+				 let content = "";
+				 if (response.data && response.data.length > 0) {
+				 	content = `<p>${response.data}</p>`;
+				 }
+				 else{
+				 	content = "No data found...";
+				 }
+
+				$("#displayAbout").html(content);
 			},
 			error : function(){
 				alert("Ajax error ocurred...");

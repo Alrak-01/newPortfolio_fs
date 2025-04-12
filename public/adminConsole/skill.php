@@ -13,7 +13,7 @@
   </head>
   <body>
  
-    <div>
+    <div> 
        <?php require_once("sidebar.php"); ?>
      
        <?php require_once("header.php"); ?>

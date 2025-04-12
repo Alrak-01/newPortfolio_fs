@@ -109,14 +109,6 @@ if (isset($_POST['input'])) {
 			 	'experience' => $rows['experience'],
 			 	'id' => $rows['id']
 			 ]; 
-			 	// '<li class="text-[#3792a5] font-bold w-full">
-                //        	'.$rows["name"].' - 
-                //         <span>'.$rows["experience"].'</span>
-                //         <span class="pl-3 space-x-2">
-                //             <a href="#"><i class="fa-solid fa-trash text-red-600"></i></a>
-                //             <a href="editSkill.php?skill_id='.$rows["id"].'"><i class="fa-solid fa-pen-to-square text-blue-600"></i></a>
-                //         </span>
-                //   </li>';
 			}
 		}
 	}

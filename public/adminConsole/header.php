@@ -2,7 +2,7 @@
             <div class="right">
                 <h1 class="font-bold text-base">Admin Console</h1>
             </div>
-                <span class="menu block lg:hidden">
+                <span id="menu-bar" class=" block lg:hidden">
                     <i class="fa-solid fa-bars text-lg"></i>
                 </span>
             <div class="left lg:flex items-center hidden gap-3">
@@ -15,7 +15,7 @@
 
             
         </header>
-        <div class="menu px-5 py-5 font-semibold shadow-lg hidden">
+        <div id="menu-display" class="px-5 py-5 font-semibold shadow-lg hidden">
                 <ul class="grid gap-3">
                     <li>
                         <a href="index.php" class=""> 
@@ -55,3 +55,4 @@
 
                 </ul>
             </div>
+

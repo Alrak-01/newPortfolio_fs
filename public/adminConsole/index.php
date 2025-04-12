@@ -7,6 +7,8 @@
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <link rel="stylesheet" href="../../src/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!-- JQUERY CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>Alrak's portfolio</title>
   </head>
   <body>
@@ -14,7 +16,7 @@
     <div>
   <?php require_once("sidebar.php"); ?>
      
-       <?php require_once("header.php"); ?>
+       <?php require_once("header.php");?>
         
         <section class="lg:ml-[15vw] pt-10 px-5 lg:h-[91.5vh]">
             <h1 class="text-xl font-semibold pb-3">Dashboard</h1>
@@ -54,4 +56,5 @@
     </div>
 
   </body>
+  <script type="text/javascript" src="jquery/header.jquery.js"></script>
   </html>

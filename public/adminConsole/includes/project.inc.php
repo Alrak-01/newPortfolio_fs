@@ -4,7 +4,7 @@ require_once("../../../autoload/autoload.php");
 $response = array(
 	"message" => "Form Submission Failed",
 	"status" => 0,
-	"data" => []
+	"data" => [] 
 );
  
 if (isset($_POST['addProject'])) {

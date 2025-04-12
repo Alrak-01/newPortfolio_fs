@@ -10,7 +10,47 @@ $(document).ready(function(){
 				dataType : "JSON",
 
 				success : function(response){
-					$("#displaySocial").html(response.data);
+				if (response.data && response.data.length > 0) {
+					let data = response.data[0];
+					$("#displaySocial").html(
+					
+					 `<li class="font-bold w-full">
+                                  Github -
+                                 <span id="github" class="pl-3 space-x-2">
+                                     <a href="${data.github}" target="_blank"><i class="fa-solid fa-square-arrow-up-right text-blue-600"></i></a>
+                                 </span>
+                            </li>
+                            <li class="font-bold w-full">
+                                  Linkedln -
+                                 <span id="linkedin" class="pl-3 space-x-2">
+                                     <a href="${data.linkedin}" target="_blank"><i class="fa-solid fa-square-arrow-up-right text-blue-600"></i></a>
+                              </span>
+                             </li>
+
+                             <li class="font-bold w-full">
+                                  Skype -
+                                 <span id="skype" class="pl-3 space-x-2">
+                                     <a href="${data.skype}" target="_blank"><i class="fa-solid fa-square-arrow-up-right text-blue-600"></i></a>
+                               </span>
+                            </li>
+
+                            <li class="font-bold w-full">
+                                  Whatsapp -
+                                 <span id="whatsapp" class="pl-3 space-x-2">
+                                     <a href="https://wa.me/${data.whatsapp}" target="_blank"><i class="fa-solid fa-square-arrow-up-right text-blue-600"></i></a>
+                                 </span>
+                             </li>
+
+                             <li class="font-bold w-full">
+                                  E-mail -
+                                 <span id="email" class="pl-3 space-x-2">
+                                     <a href="mailto:${data.email}" target="_blank"><i class="fa-solid fa-square-arrow-up-right text-blue-600"></i></a>
+                                 </span>
+                             </li>`
+				
+						);
+
+				}
 				},
 				error : function(){
 					alert("An error occurred");

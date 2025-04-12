@@ -10,7 +10,7 @@
     <!-- JQUERY CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>Alrak's portfolio</title>
-  </head> 
+  </head>  
   <body>
     <div class="wrapper">
     <?php require_once("sidebar.php"); ?>
