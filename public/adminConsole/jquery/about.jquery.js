@@ -8,15 +8,32 @@ $(document).ready(function(){
 			dataType : "JSON",
 
 			success : function(response){
+				let param = new URLSearchParams(window.location.search);
+				let id = param.get("about_id");
+				let data = response.data;
 				 let content = "";
-				 if (response.data && response.data.length > 0) {
-				 	content = `<p>${response.data}</p>`;
+				 if (id && id != "") {
+				 	if (id == data.id) {
+				 		$("#text").html(data.about);
+				 	}
+				 	else{
+				 		window.location.href = "about.php?id=nf";
+				 	}
+				 }	
+				 else{
+
+				 	 if (data && data.about) {
+				 	content = `<p>${data.about}</p>`;
 				 }
 				 else{
 				 	content = "No data found...";
 				 }
 
 				$("#displayAbout").html(content);
+
+				 }
+
+				
 			},
 			error : function(){
 				alert("Ajax error ocurred...");

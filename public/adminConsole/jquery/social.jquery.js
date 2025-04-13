@@ -12,6 +12,12 @@ $(document).ready(function(){
 				success : function(response){
 				if (response.data && response.data.length > 0) {
 					let data = response.data[0];
+					$("#linkedin").val(data.linkedln);
+					$("#github").val(data.github);
+					$("#whatsapp").val(data.whatsapp);
+					$("#skype").val(data.skype);
+					$("#email").val(data.email);
+
 					$("#displaySocial").html(
 					
 					 `<li class="font-bold w-full">
@@ -23,7 +29,7 @@ $(document).ready(function(){
                             <li class="font-bold w-full">
                                   Linkedln -
                                  <span id="linkedin" class="pl-3 space-x-2">
-                                     <a href="${data.linkedin}" target="_blank"><i class="fa-solid fa-square-arrow-up-right text-blue-600"></i></a>
+                                     <a href="${data.linkedln}" target="_blank"><i class="fa-solid fa-square-arrow-up-right text-blue-600"></i></a>
                               </span>
                              </li>
 
@@ -67,9 +73,9 @@ $(document).ready(function(){
 		let param = new URLSearchParams(window.location.search);
 		let social_id = param.get("id");
 
-		if (social_id == null) {
-			window.location.href = "social.php?id=nf";
-		}
+		// if (social_id == null) {
+		// 	window.location.href = "social.php?id=nf";
+		// }
 
 		let formData = new FormData(this);
 		formData.append("editSocial", "editSocial");
@@ -90,7 +96,7 @@ $(document).ready(function(){
 				}
 				else if(response.status == 1){
 					alert(response.message);
-					window.location.href = "social.php?success";
+					// window.location.href = "social.php?success";
 				}
 			},
 			error : function(){

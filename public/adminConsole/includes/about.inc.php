@@ -41,9 +41,12 @@ if (isset($_POST['input'])) {
 	 		$response['data'] = "No Data Found";
 	 	}
 	 	else {
-	 		while ($rows = $result->fetch(PDO::FETCH_ASSOC)) {
-	 			$response['data'] =  $rows['about_me'];
-	 		}
+	 			$rows = $result->fetch(PDO::FETCH_ASSOC);
+	 			$response['data'] =
+	 		[
+	 			"about" =>  $rows['about_me'],
+	 			"id" => $rows['id']
+	 		];
 	 	}
 	 }
 }

@@ -31,7 +31,7 @@
                                 <label for="about" class="font-semibold">
                                     About <span class="text-red-600 text-sm">*</span>
                                 </label>
-                                <textarea name="text" id="text" class="border border-gray-300 p-2 text-sm rounded-md outline-none focus:border-green-900 transition-all duration-300 delay-75 h-36" spellcheck="false" ></textarea>
+                                <textarea name="text" id="text" class="border border-gray-300 p-2 text-sm rounded-md outline-none focus:border-green-900 transition-all duration-300 delay-75 h-36" spellcheck="false"></textarea>
                             </div>
                         </div>
         

@@ -11,6 +11,7 @@ $(document).ready(function(){
 			success : function(response){
 				let content = '';
 				if (response.data && response.data.length > 0) {
+					$("#total-project").html(response.data.length);
                 response.data.forEach(function(project) {
                 content += `<div class="card w-full h-36 grid p-3 font-semibold shadow-lg rounded-md border dark:border-stone-800">
 			                	<div class="flex items-center justify-between pb-5">

@@ -7,6 +7,8 @@ $response = array(
 	"data" => []
 );
 
+
+// ADD SKILL STARTS
 if (isset($_POST['addSkill'])) {
 		$name = htmlspecialchars(stripslashes($_POST['name']));
 		$experience = htmlspecialchars(stripslashes($_POST['experience']));
@@ -19,8 +21,10 @@ if (isset($_POST['addSkill'])) {
 			switch ($type) {
 				case 'languages':
 					$digitType = 1;
+					break;
 				case "frameworks":
 					$digitType = 2;
+					break;
 				case "others":
 					$digitType = 3;
 					break;
@@ -40,7 +44,9 @@ if (isset($_POST['addSkill'])) {
 			}
 		}
 }
+// ADD SKILL ENDS
 
+// EDIT SKILL STARTS
 if (isset($_POST['editSkill'])) {
 	$name = htmlspecialchars(stripslashes($_POST['name']));
 	$experience = htmlspecialchars(stripslashes($_POST['experience']));
@@ -58,8 +64,10 @@ if (isset($_POST['editSkill'])) {
 		switch ($type) {
 				case 'languages':
 					$digitType = 1;
+					break;
 				case "frameworks":
 					$digitType = 2;
+					break;
 				case "others":
 					$digitType = 3;
 					break;
@@ -80,19 +88,25 @@ if (isset($_POST['editSkill'])) {
 	}
 
 }
+// EDIT SKILL ENDS
 
-if (isset($_POST['delete_skill']) && isset($_POST['skill_id'])) {
-	$id = filter_input(INPUT_POST, "skill_id", FILTER_SANITIZER_NUMBER_INT);
+
+// DELETE SKILL STARTS
+if (isset($_POST['delete_skill'])) {
+	$id = filter_input(INPUT_POST, "skill_id", FILTER_SANITIZE_NUMBER_INT);
 	$result = $skill->deleteSkill($id);
 	if ($result == 0) {
 		$response['message'] = "Database error occurred";
+
 	}
 	elseif ($result == 1){
 		$response['message'] = "Skill deleted successfully!";
 		$response['status'] = 1;
 	}
 }
+// DELETE SKILL ENDS
 
+// DISPLAY SKILL STARTS
 if (isset($_POST['input'])) {
     $input = htmlspecialchars(stripslashes($_POST['input']));
 
@@ -107,7 +121,8 @@ if (isset($_POST['input'])) {
 			 $response['data'][] = [
 			 	'name' => $rows['name'],
 			 	'experience' => $rows['experience'],
-			 	'id' => $rows['id']
+			 	'id' => $rows['id'],
+			 	'type' => $rows['type']
 			 ]; 
 			}
 		}
@@ -116,5 +131,7 @@ if (isset($_POST['input'])) {
 		$response['data'] = "Error occurred...";
 	}
 }
+// DISPLAY SKILL ENDS
+
 echo json_encode($response);
 

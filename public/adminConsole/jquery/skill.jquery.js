@@ -10,15 +10,55 @@ $(document).ready(function () {
 
 				success : function(response){
 					let content = "";
-					if (response.data && response.data.length > 0) {
+					let param = new URLSearchParams(window.location.search);
+					let id = param.get("skill_id");
+					let found = false;
+
+					if (id && id != "") {
+						response.data.forEach(function(skill){
+							if (skill.id == id) {
+								$("#name").val(skill.name);
+								$("#experience").val(skill.experience);
+								if (skill.type == 1) {
+								$("#type").html(
+									`<option value="languages">Languages</option>
+                                    <option value="frameworks">Frameworks</option>
+                                    <option value="others">Others</option>`
+									);
+								}
+								else if(skill.type == 2) {
+									$("#type").html(
+									`<option value="frameworks">Frameworks</option>
+									<option value="languages">Languages</option>
+                                    <option value="others">Others</option>`
+									);
+								}
+								else if(skill.type == 3) {
+									$("#type").html(
+                                    `<option value="others">Others</option>
+									<option value="frameworks">Frameworks</option>
+									<option value="languages">Languages</option>`
+									);
+								}
+
+								found = true;
+							}
+						});
+						if (!found){
+								window.location.href = "skill.php?id=nf";
+							}
+					}
+				else{
+						if (response.data && response.data.length > 0) {
+							$("#total-skill").html(response.data.length);
 						response.data.forEach(function(skill) {
 							content += `
 									<li class="text-[#3792a5] font-bold w-full">
 		                                ${skill.name} 
 		                                <span>${skill.experience} years</span>
 		                                <span class="pl-3 space-x-2">
-		                                    <a href="#"><i class="fa-solid fa-trash text-red-600"></i></a>
-		                                    <a href="editSkill.php"><i class="fa-solid fa-pen-to-square text-blue-600"></i></a>
+		                                    <a href="#" data-id="${skill.id}" class="delete-skill"><i class="fa-solid fa-trash text-red-600"></i></a>
+		                                    <a href="editSkill.php?skill_id=${skill.id}"><i class="fa-solid fa-pen-to-square text-blue-600"></i></a>
 		                                </span>
 		                            </li> 
 							`;
@@ -29,6 +69,9 @@ $(document).ready(function () {
 
 					}
 					$("#displaySkill").html(content);
+				}
+					
+					
 				},
 				error : function(){
 					alert("An error occurred");
@@ -108,6 +151,35 @@ $(document).ready(function () {
 			});
 		});
 
+
+	$(document).on("click", ".delete-skill", function (e){
+    e.preventDefault();
+
+    let skillId = $(this).data("id");
+
+    if (confirm("Are you sure you want to delete this skill?")) {
+        $.ajax({
+            url: "includes/skill.inc.php",
+            method: "POST",
+            dataType: "json",
+            data: {
+                delete_skill: true,
+                skill_id: skillId
+            },
+            success: function (response) {
+                if (response.status == 1) {
+                    console.log(response.message);
+                    location.reload(); 
+                } else {
+                    alert(response.message);
+                }
+            },
+            error: function () {
+                alert("Something went wrong!");
+            }
+        });
+    }
+});
 
 
 	// ADD AND CLOSE SKILL FORM

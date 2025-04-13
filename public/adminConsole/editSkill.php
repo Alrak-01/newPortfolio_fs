@@ -29,23 +29,20 @@
                                 <label for="category" class="font-semibold">
                                     Name <span class="text-red-600 text-sm">*</span>
                                 </label>
-                                <input type="text" placeholder="Name" id="name" name="name" class="border border-gray-300 p-2 text-sm rounded-md outline-none focus:border-green-900 transition-all duration-300 delay-75" spellcheck="false" required value="<?=$row['name']?>">
+                                <input type="text" placeholder="Name" id="name" name="name" class="border border-gray-300 p-2 text-sm rounded-md outline-none focus:border-green-900 transition-all duration-300 delay-75" spellcheck="false" required value="#">
                             </div>
                             <div class="category grid gap-2">
                                 <label for="category" class="font-semibold">
                                     Experience <span class="text-red-600 text-sm">*</span>
                                 </label>
-                                <input type="number" id="experience" name="experience" placeholder="Years" class="border border-gray-300 p-2 text-sm rounded-md outline-none focus:border-green-900 transition-all duration-300 delay-75" spellcheck="false" value="<?=$row['experience']?>">
+                                <input type="number" id="experience" name="experience" placeholder="Years" class="border border-gray-300 p-2 text-sm rounded-md outline-none focus:border-green-900 transition-all duration-300 delay-75" spellcheck="false" value="#">
                             </div>
                             <div class="category grid gap-2">
                                 <label for="category" class="font-semibold">
                                     Type <span class="text-red-600 text-sm">*</span>
                                 </label>
                                 <select name="type" id="type" class="border border-gray-300 p-2 text-sm rounded-md outline-none focus:border-green-900 transition-all duration-300 delay-75" spellcheck="false" >
-                                    <option value=""><?=$row['status']?></option>
-                                    <option value="languages">Languages</option>
-                                    <option value="frameworks">Frameworks</option>
-                                    <option value="others">Others</option>
+                                    <!-- IMPORTED FROM JQUERY -->
                                 </select>
                             </div>
                         </div>

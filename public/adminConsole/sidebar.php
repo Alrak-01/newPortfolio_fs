@@ -31,7 +31,7 @@
                     </a>
                 </li>
                 <li class="hover:bg-gray-700 py-1 hover:text-white dark:text-white dark:hover:bg-gray-300 dark:hover:text-black duration-300 delay-100 transition-colors ease-in-out rounded-md border-b dark:border-stone-900">
-                    <a href="social.php" class="px-5">
+                    <a href="social.php?id=1" class="px-5">
                         <i class="fa-solid fa-comment pr-5"></i> 
                         <span>My socials</span>
                     </a>

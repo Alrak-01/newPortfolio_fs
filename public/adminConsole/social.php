@@ -56,11 +56,11 @@
                                 <input type="text" placeholder="Skype" id="skype" name="skype" class="border border-gray-300 p-2 text-sm rounded-md outline-none focus:border-green-900 transition-all duration-300 delay-75" spellcheck="false" >
                             </div>
 
-                            <div class="mobile grid lg:gap-2">
-                                <label for="mobile" class="font-semibold">
-                                    Mobile <span class="text-red-600 text-sm">*</span>
+                            <div class="email grid lg:gap-2">
+                                <label for="email" class="font-semibold">
+                                    Email <span class="text-red-600 text-sm">*</span>
                                 </label>
-                                <input type="text" placeholder="Mobile" id="mobile" name="mobile" class="border border-gray-300 p-2 text-sm rounded-md outline-none focus:border-green-900 transition-all duration-300 delay-75" spellcheck="false" >
+                                <input type="text" placeholder="Email" id="email" name="email" class="border border-gray-300 p-2 text-sm rounded-md outline-none focus:border-green-900 transition-all duration-300 delay-75" disabled>
                             </div>
                         </div>
                         <div class="button flex items-end lg:justify-end pb-10">
