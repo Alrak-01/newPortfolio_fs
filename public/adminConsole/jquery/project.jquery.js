@@ -9,15 +9,32 @@ $(document).ready(function(){
 			dataType : "JSON",
 
 			success : function(response){
+				let param = new URLSearchParams(window.location.search);
+				let id = param.get("id");
 				let content = '';
-				if (response.data && response.data.length > 0) {
+
+				if (id && id != "") {
+					response.data.forEach(function(project){
+						if (id == project.id) {
+							$("#stack").val(project.stack);
+							$("#title").val(project.title);
+							$("#liveLink").val(project.live_link);
+							$("#githubLink").val(project.github_link);
+							$("#date").val(project.date);
+						}
+					})
+					$("#stack").val();
+				}
+				else{
+					if (response.data && response.data.length > 0) {
 					$("#total-project").html(response.data.length);
-                response.data.forEach(function(project) {
-                content += `<div class="card w-full h-36 grid p-3 font-semibold shadow-lg rounded-md border dark:border-stone-800">
+	                response.data.forEach(function(project) {
+	                content += `<div class="card w-full h-36 grid p-3 font-semibold shadow-lg rounded-md border dark:border-stone-800">
 			                	<div class="flex items-center justify-between pb-5">
 			                    <h3>${project.title}</h3>
-			                    <span id="menu absolute">
-			                        <i class="fa-solid fa-ellipsis-vertical"></i>
+			                   <span id="menu" class="">
+			                        <a href="#" class="project-delete" data-id="${project.id}"><i class="text-xs fa-solid fa-trash text-red-600"></i></a>
+			                        <a href="editProject.php?id=${project.id}"><i class="text-xs fa-solid fa-pen-to-square text-blue-600"></i></a>
 			                    </span>
 				                </div>
 				                <span class="text-center">${project.stack}</span>
@@ -31,6 +48,8 @@ $(document).ready(function(){
             }
             // DISPLAY THE LOOPED DATA INTO THE HTML ELEMENT
             $("#displayProject").html(content);
+				}
+		
 			},
 			error : function(){
 				alert("Ajax error ocurred...");
@@ -111,5 +130,36 @@ $(document).ready(function(){
 				alert("Ajax request failed");
 			}
 		});
-	})
+	});
+
+	$(document).on("click", ".project-delete", function(e){
+		e.preventDefault();
+
+		let projectId = $(this).data("id");
+
+		if (confirm("Are you sure you want to delete this Project?")) {
+			$.ajax({
+				url : "includes/project.inc.php",
+				method : "POST",
+				dataType : "JSON",
+				data : {
+					delete_project : true,
+					project_id : projectId
+				},
+				success : function(response){
+					if (response.status == 0) {
+						alert(response.message);
+					}
+					else if(response.status == 1){
+						console.log(response.message);
+						location.reload();
+					}
+				},
+				error : function(){
+					alert("Ajax Request Failed");
+				}
+
+			});
+		}
+	});
 });

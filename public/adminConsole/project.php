@@ -25,12 +25,12 @@
 
         <div class="relative  cards bg-white dark:bg-opacity-10 rounded-lg py-10 lg:px-5 lg:grid space-y-5 lg:space-y-0 grid-cols-4 lg:gap-5 overflow-y-scroll lg:h-[87%] h-[75vh]" id="displayProject">
             
-           <!--  <div class="card w-full h-36 grid p-3 font-semibold shadow-lg rounded-md border dark:border-stone-800">
+            <!-- <div class="card w-full h-36 grid p-3 font-semibold shadow-lg rounded-md border dark:border-stone-800">
                 <div class="flex items-center justify-between pb-5">
                     <h3>Rasmat limited</h3>
-                    <span id="menu absolute">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                        
+                    <span id="menu" class="">
+                        <a href="#"><i class="text-xs fa-solid fa-trash text-red-600"></i></a>
+                        <a href="#"><i class="text-xs fa-solid fa-pen-to-square text-blue-600"></i></a>
                     </span>
                 </div>
                 <span class="text-center">Frontend</span>

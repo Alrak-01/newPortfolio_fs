@@ -161,7 +161,7 @@ $(document).ready(function () {
         $.ajax({
             url: "includes/skill.inc.php",
             method: "POST",
-            dataType: "json",
+            dataType: "JSON",
             data: {
                 delete_skill: true,
                 skill_id: skillId

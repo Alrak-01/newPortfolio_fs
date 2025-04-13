@@ -73,7 +73,9 @@ if (isset($_POST['input'])) {
 	 				'title' => $rows['title'],
 	 				'stack' => $rows['stack'],
 	 				'date' => $rows['date'],
-	 				'id' => $rows['id']
+	 				'id' => $rows['id'],
+	 				'live_link' => $rows['live_link'],
+	 				'github_link' => $rows['github_link']
 	 			];
 	 		}
 	 	}
@@ -83,20 +85,17 @@ if (isset($_POST['input'])) {
 	 }
 }
 
-// if (isset($_POST['delete_project']) && isset($_POST['project_id'])) {
-// 	$id = filter_input(INPUT_POST, "project_id", FILTER_SANITIZER_NUMBER_INT);
-// 	$result = $project->deleteProject($id);
-// 	if ($result == 0) {
-// 		$response['message'] = "Database error occurred";
-// 	}
-// 	elseif ($result == 1){
-// 		$response['message'] = "project deleted successfully!";
-// 		$response['status'] = 1;
-// 	}
-// }
-// else{
-// 	$response['message'] = "POST error or ID not found...";
-// }
+if (isset($_POST['delete_project']) && isset($_POST['project_id'])) {
+	$id = filter_input(INPUT_POST, "project_id", FILTER_SANITIZE_NUMBER_INT);
+	$result = $project->deleteProject($id);
+	if ($result == 0) {
+		$response['message'] = "Database error occurred";
+	}
+	elseif ($result == 1){
+		$response['message'] = "project deleted successfully!";
+		$response['status'] = 1;
+	}
+}
 
 
 
