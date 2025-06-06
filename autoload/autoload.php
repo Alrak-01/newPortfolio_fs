@@ -24,6 +24,9 @@ function myAutoloader($className){
   }
 }
 
+$login = new login();
+$login->tableName = "tbl_admin";
+
 $skill = new Skill();
 $skill->tableName = "tbl_skill";
 
