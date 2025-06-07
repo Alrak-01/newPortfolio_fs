@@ -1,21 +1,22 @@
 <header class="lg:w-[85vw] lg:ml-[15vw] flex  items-center justify-between px-5 font-medium py-3 text-sm lg:text-md border-b border-stone-900">
+            <span id="menu-bar" class=" block lg:hidden">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </span>
             <div class="right">
                 <h1 class="font-bold text-base">Admin Console</h1>
             </div>
-                <span id="menu-bar" class=" block lg:hidden">
-                    <i class="fa-solid fa-bars text-lg"></i>
-                </span>
+                
             <div class="left lg:flex items-center hidden gap-3">
                 <span class="flex items-center gap-2 text-sm">
                     <i class="fa-solid fa-user"></i>
-                    <h3>Admin Admin</h3>
+                    <h3><?=ucfirst($_SESSION['lastname'])." ". ucfirst($_SESSION['firstname'])?></h3>
                 </span>
-                <i class="fa-regular fa-moon lg:text-lg bg-black bg-opacity-30 dark:bg-opacity-10 dark:bg-white px-2 rounded-full shadow-md hover:opacity-50 delay-100 duration-100 transition-opacity"></i>
+                <i class="fa-regular fa-moon lg:text-base dark:bg-white px-2 hover:opacity-50 delay-100 duration-100 transition-opacity"></i>
             </div>
 
             
         </header>
-        <div id="menu-display" class="px-5 py-5 font-semibold shadow-lg hidden">
+        <!-- <div id="menu-display" class="px-5 py-5 font-semibold shadow-lg hidden">
                 <ul class="grid gap-3">
                     <li>
                         <a href="index.php" class=""> 
@@ -56,3 +57,45 @@
                 </ul>
             </div>
 
+ -->
+
+ <div id="menu-display" class="hidden px-6 py-6 font-semibold shadow-lg bg-white rounded-lg w-64">
+  <ul class="space-y-4">
+    <li>
+      <a href="index.php" class="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200">
+        <i class="fa-solid fa-table-cells mr-4 text-lg"></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
+    <li>
+      <a href="project.php" class="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200">
+        <i class="fa-solid fa-list-check mr-4 text-lg"></i>
+        <span>Project</span>
+      </a>
+    </li>
+    <li>
+      <a href="skill.php" class="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200">
+        <i class="fa-solid fa-lightbulb mr-4 text-lg"></i>
+        <span>Skill</span>
+      </a>
+    </li>
+    <li>
+      <a href="about.php" class="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200">
+        <i class="fa-solid fa-address-card mr-4 text-lg"></i>
+        <span>About</span>
+      </a>
+    </li>
+    <li>
+      <a href="social.php" class="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200">
+        <i class="fa-solid fa-comment mr-4 text-lg"></i>
+        <span>My Socials</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="flex items-center text-red-600 hover:text-red-800 transition-colors duration-200">
+        <i class="fa-solid fa-person-walking-luggage mr-4 text-lg"></i>
+        <span>Logout</span>
+      </a>
+    </li>
+  </ul>
+</div>

@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!isset($_SESSION['id'])) {
+    header("location:authentication/login.php?e=notFound");
+}
+?>
 <!doctype html>
 <html lang="en" class="">
   <head>
