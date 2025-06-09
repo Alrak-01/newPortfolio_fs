@@ -65,4 +65,5 @@ if (!isset($_SESSION['id'])) {
   <script type="text/javascript" src="jquery/header.jquery.js"></script>
   <script type="text/javascript" src="jquery/skill.jquery.js"></script>
   <script type="text/javascript" src="jquery/project.jquery.js"></script>
+  <script type="text/javascript" src="jquery/sidebar.jquery.js"></script>
   </html>

@@ -13,8 +13,10 @@ if (isset($_POST['addProject'])) {
 		$live_link = htmlspecialchars(stripslashes($_POST['liveLink']));
 		$github_link = htmlspecialchars(stripslashes($_POST['githubLink']));
 		$date = htmlspecialchars(stripslashes($_POST['date']));
+
+		$yearOnly = date('Y', strtotime($date));
 		
-		if (empty($stack) || empty($title) || empty($live_link) || empty($github_link) || empty($date)) {
+		if (empty($stack) || empty($title) || empty($live_link) || empty($github_link) || empty($yearOnly)) {
 					$response['message'] = "Input field cannot be empty";
 			}
 			else{
@@ -41,7 +43,9 @@ if (isset($_POST['editProject'])) {
 			$github_link = htmlspecialchars(stripslashes($_POST['githubLink']));
 			$date = htmlspecialchars(stripslashes($_POST['date']));
 
-			if (empty($stack) || empty($title) || empty($live_link) || empty($github_link) || empty($date)) {
+			$yearOnly = date('Y', strtotime($date));
+
+			if (empty($stack) || empty($title) || empty($live_link) || empty($github_link) || empty($yearOnly)) {
 						$response['message'] = "Input field cannot be empty";
 				}
 				else{
@@ -63,7 +67,7 @@ if (isset($_POST['input'])) {
 	$input = htmlspecialchars(stripslashes($_POST['input']));
 
 	 if (empty($input)) {
-	 	$result = $project->selectProject();
+	 	$result = $project->selectProject(100);
 	 	if ($result == 0) {
 	 		$response['data'] = "No Data Found";
 	 	}

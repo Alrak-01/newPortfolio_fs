@@ -4,6 +4,7 @@
 class Skill extends Database{
   public $tableName;
   public $db_con;
+  public $instance;
 
   public function __construct(){
     $this->tableName;
@@ -17,10 +18,10 @@ class Skill extends Database{
     return $stmt ? 1 : 0;
   }
 
-  public function selectSkill(){
-    $sql = "SELECT * FROM ".$this->tableName;
+  public function selectSkill($result){
+    $sql = "SELECT * FROM ".$this->tableName. " ". $this->instance;
     $stmt = $this->db_con->prepare($sql);
-    $stmt->execute();
+    $stmt->execute([$result]);
     return $stmt->rowCount() > 0 ? $stmt : 0;
   }
 

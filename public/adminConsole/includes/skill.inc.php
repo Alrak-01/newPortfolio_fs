@@ -112,7 +112,8 @@ if (isset($_POST['input'])) {
 
 	if (empty($input)) {
 
-		$result = $skill->selectSkill();
+		$skill->instance = "WHERE `status` = ?";
+		$result = $skill->selectSkill(0);
 		if ($result == 0) {
 			$response['message'] = "No Data Found...";
 		}

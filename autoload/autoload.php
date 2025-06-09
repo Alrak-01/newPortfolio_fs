@@ -1,5 +1,13 @@
 <?php
-  include("../../../config/database.php");
+  $url = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+
+if (strpos($url, 'landingPage') !== false) {
+
+        include("../../config/database.php");
+  }
+  else{
+        include("../../../config/database.php");
+  }
 
 // AUTOLOADER FUNCTION
 spl_autoload_register('myAutoloader');

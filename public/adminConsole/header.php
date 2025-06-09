@@ -1,17 +1,19 @@
 <header class="lg:w-[85vw] lg:ml-[15vw] flex  items-center justify-between px-5 font-medium py-3 text-sm lg:text-md border-b border-stone-900">
-            <span id="menu-bar" class=" block lg:hidden">
+            <span id="" class="menuBar block lg:hidden">
                     <i class="fa-solid fa-bars text-lg"></i>
                 </span>
-            <div class="right">
+            <div class="right hidden lg:block">
                 <h1 class="font-bold text-base">Admin Console</h1>
             </div>
                 
-            <div class="left lg:flex items-center hidden gap-3">
-                <span class="flex items-center gap-2 text-sm">
-                    <i class="fa-solid fa-user"></i>
-                    <h3><?=ucfirst($_SESSION['lastname'])." ". ucfirst($_SESSION['firstname'])?></h3>
-                </span>
-                <i class="fa-regular fa-moon lg:text-base dark:bg-white px-2 hover:opacity-50 delay-100 duration-100 transition-opacity"></i>
+            <div class="left flex items-center gap-3">
+                <div class="flex items-center gap-4 text-sm">
+                    <i class="fa-solid fa-sun delay-100 duration-100 transition-opacity"></i>
+                    <span class="flex items-center gap-2">
+                      <h3><?=ucfirst($_SESSION['lastname'])." ". ucfirst($_SESSION['firstname'])?></h3>
+                      <i class="fa-solid fa-user"></i>
+                    </span>
+                </div>
             </div>
 
             
