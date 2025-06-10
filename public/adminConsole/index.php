@@ -45,20 +45,8 @@ if (!isset($_SESSION['id'])) {
                         <i class="fa-solid fa-right-to-bracket"></i>
                     </a>
                 </div>
-        
-                <!-- <div class="card w-full h-36 grid p-3 font-semibold shadow-lg rounded-md border dark:border-stone-800">
-                    <h3>All Projects</h3>
-                    <span class="text-center">10</span>
-                    <a href="#" class="text-right text-slate-600 hover:text-slate-900 dark:hover:text-slate-700 focus:text-slate-900 duration-300 delay-100 transition-colors ease-in-out space-x-2">
-                        <span>view all</span>
-                        <i class="fa-solid fa-right-to-bracket"></i>
-                    </a>
-                </div> -->
-        
             </div>
         </section>
-        
-        
     </div>
 
   </body>
