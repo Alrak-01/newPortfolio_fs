@@ -48,7 +48,7 @@ $skill->instance = "WHERE `type` = ?";
             <!-- DISPLAY LANGUAGES STARTS -->
                 <li class="font-medium text-lg">Languages</li>
                 <div>
-                     <ul class="lg:grid grid-cols-4 gap-5 w-full pl-6 space-y-5 lg:space-y-0">
+                     <ul class="lg:grid grid-cols-4 gap-5 w-full pl-6 space-y-5 lg:space-y-0 capitalize">
                         <?php 
                         $skillResult = $skill->selectSkill(1);
                         if ($skillResult == 0) {
@@ -70,7 +70,7 @@ $skill->instance = "WHERE `type` = ?";
             <!-- DISPLAY FRAMEWORKS STARTS -->
                 <li class="font-medium text-lg">Frameworks</li>
                 <div>
-                    <ul class="lg:grid grid-cols-4 gap-5 w-full pl-6 space-y-5 lg:space-y-0">
+                    <ul class="lg:grid grid-cols-4 gap-5 w-full pl-6 space-y-5 lg:space-y-0 capitalize">
 
                         <?php 
                         $skillResult = $skill->selectSkill(2);
@@ -92,7 +92,7 @@ $skill->instance = "WHERE `type` = ?";
             <!-- DISPLAY OTHERS STARTS -->
                 <li class="font-medium text-lg">Others</li>
                 <div>
-                     <ul class="lg:grid grid-cols-4 gap-5 w-full pl-6 space-y-5 lg:space-y-0">
+                     <ul class="lg:grid grid-cols-4 gap-5 w-full pl-6 space-y-5 lg:space-y-0 capitalize">
                         <?php 
                         $skillResult = $skill->selectSkill(3);
                         if ($skillResult == 0) {
@@ -150,8 +150,6 @@ $skill->instance = "WHERE `type` = ?";
                     }
                 }
                 ?>
-                
-
                 <!-- <div class="card h-auto w-full border border-zinc-400 p-5 rounded-lg space-y-2 shadow-lg bg-white dark:bg-neutral-950 dark:border-stone-800">
                     <p class="text-sm text-gray-800 dark:text-[#3792a5]">2023</p>
                     <a href="#" class="block hover:underline font-medium text-xl delay-100 duration-100">TakeNote</a>

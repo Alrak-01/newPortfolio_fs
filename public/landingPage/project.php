@@ -14,7 +14,6 @@ require_once("../../autoload/autoload.php");
   </head>
   <body> 
     <div class="dark:border-stone-800 bg-zinc-200 dark:bg-black z-10 dark:text-white">
-
        <div class="min-h-screen">
         <?php include("header.php");?>
         <div class="lg:px-48 mx-2 lg:pt-16 pt-10">
