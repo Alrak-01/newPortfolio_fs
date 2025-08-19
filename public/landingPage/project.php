@@ -13,16 +13,14 @@ require_once("../../autoload/autoload.php");
     <script type="text/javascript" src="jquery/theme.js"></script>
   </head>
   <body> 
-    <div class="dark:border-stone-800 bg-zinc-200 dark:bg-black z-10 dark:text-white min-h-screen">
+    <div class="dark:border-stone-800 bg-zinc-200 dark:bg-black z-10 dark:text-white">
 
-       <div class="h-screen">
+       <div class="min-h-screen">
         <?php include("header.php");?>
-
         <div class="lg:px-48 mx-2 lg:pt-16 pt-10">
             <div class="flex items-center justify-between w-full pb-10">
                 <h1 class="lg:text-4xl text-3xl font-medium">Projects</h1>
             </div>
-            
             <div class="cards grid lg:grid-cols-3 gap-5">
                 <?php
                         $itemsPerPage = 6;
@@ -41,14 +39,14 @@ require_once("../../autoload/autoload.php");
                         while ($rows = $projectResult->fetch(PDO::FETCH_ASSOC)) {
                             echo '
                                   <div class="card h-auto w-full border border-zinc-400 p-5 rounded-lg space-y-2 shadow-lg bg-white dark:bg-neutral-950 dark:border-stone-800">
-                        <p class="text-sm text-gray-800 dark:text-[#3792a5]">'.$rows['date'].'</p>
-                        <span href="#" class="block font-medium text-xl">'.$rows['stack'].'</span>
-                        <h3 class="text-md text-gray-800 dark:text-gray-100">'.$rows['title'].'</h3>
+                                  <span href="#" class="block font-medium text-xl text-left">'.$rows['title'].'</span>
+                        <p class="text-sm text-gray-800 dark:text-[#3792a5] text-center">'.$rows['date'].'</p>
+                        <h3 class="text-md text-gray-800 dark:text-gray-100 font-medium text-right">'.$rows['stack'].'</h3>
                         <div class="button flex items-center gap-3 pt-1">
-                            <a href="'.$rows['live_link'].'" class="border dark:text-gray-100 border-gray-400 dark:border-stone-800 rounded-lg px-2 py-1 text-gray-800 delay-100 duration-100 transition-opacity hover:bg-black hover:bg-opacity-5">
+                            <a href="'.$rows['live_link'].'" target="_blank" class="border dark:text-gray-100 border-gray-400 dark:border-stone-800 rounded-lg px-2 py-1 text-gray-800 delay-100 duration-100 transition-opacity hover:bg-black hover:bg-opacity-5">
                                 Live Preview
                             </a>
-                            <a href="'.$rows['github_link'].'" class="border dark:text-gray-100 border-gray-400 dark:border-stone-800 rounded-lg px-2 py-1 text-gray-800 delay-100 duration-100 transition-opacity hover:bg-black hover:bg-opacity-5">
+                            <a href="'.$rows['github_link'].'" target="_blank" class="border dark:text-gray-100 border-gray-400 dark:border-stone-800 rounded-lg px-2 py-1 text-gray-800 delay-100 duration-100 transition-opacity hover:bg-black hover:bg-opacity-5">
                                 GitHub
                             </a>
                         </div>

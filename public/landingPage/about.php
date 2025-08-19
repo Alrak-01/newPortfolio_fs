@@ -16,8 +16,8 @@ $row = $result->fetch(PDO::FETCH_ASSOC);
     <script type="text/javascript" src="jquery/theme.js"></script>
   </head>
   <body>
-    <div class='dark:bg-black dark:text-white bg-zinc-200 min-h-screen z-10'>
-      <div class="h-screen">
+    <div class='dark:bg-black dark:text-white bg-zinc-200 z-10'>
+      <div class="m-h-screen">
          <?php include("header.php");?>
         <div class='lg:px-48 lg:pt-16 pt-10 px-2'>
           <h1 class='lg:text-4xl text-3xl text-gray-900 dark:text-white font-medium pb-6'>About Me.</h1>
