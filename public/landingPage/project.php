@@ -13,9 +13,10 @@ require_once("../../autoload/autoload.php");
     <script type="text/javascript" src="jquery/theme.js"></script>
   </head>
   <body> 
-    <div class="dark:border-stone-800 bg-zinc-200 dark:bg-black z-10 dark:text-white">
+    <div class="dark:border-stone-800 bg-zinc-200 dark:bg-black z-10 dark:text-white min-h-screen">
 
-       <?php include("header.php");?>
+       <div class="h-screen">
+        <?php include("header.php");?>
 
         <div class="lg:px-48 mx-2 lg:pt-16 pt-10">
             <div class="flex items-center justify-between w-full pb-10">
@@ -89,6 +90,7 @@ require_once("../../autoload/autoload.php");
         <?php endif; ?>
         </div>
             <?php include("footer.php");?>
+       </div>
             
         </div>
 </body>
