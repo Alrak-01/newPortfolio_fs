@@ -23,29 +23,20 @@ require_once("../../autoload/autoload.php");
             </div>
             
             <div class="cards grid lg:grid-cols-3 gap-5">
-                <!-- Project Card Start -->
                 <?php
-                    // if ($projectResult == 0) {
-                    //     echo "No project Found...";
-                    // }
-                    // else{
-                        // Pagination settings
-    $itemsPerPage = 6;
-    $currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-    $currentPage = max($currentPage, 1);
-    $offset = ($currentPage - 1) * $itemsPerPage;
+                        $itemsPerPage = 6;
+                        $currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+                        $currentPage = max($currentPage, 1);
+                        $offset = ($currentPage - 1) * $itemsPerPage;
 
-    // Total projects and total pages
-    $totalProjects = $project->getTotalProjects();
-    $totalPages = ceil($totalProjects / $itemsPerPage);
+                        $totalProjects = $project->getTotalProjects();
+                        $totalPages = ceil($totalProjects / $itemsPerPage);
 
-    // Get paginated projects
-    $projectResult = $project->selectProjectSpecial($itemsPerPage, $offset);
+                        $projectResult = $project->selectProjectSpecial($itemsPerPage, $offset);
 
-    // Display the projects
-    if ($projectResult == 0) {
-        echo "No project Found...";
-    } else {
+                        if ($projectResult == 0) {
+                            echo "No project Found...";
+                        } else {
                         while ($rows = $projectResult->fetch(PDO::FETCH_ASSOC)) {
                             echo '
                                   <div class="card h-auto w-full border border-zinc-400 p-5 rounded-lg space-y-2 shadow-lg bg-white dark:bg-neutral-950 dark:border-stone-800">
@@ -65,11 +56,6 @@ require_once("../../autoload/autoload.php");
                         }
                     }
                 ?>
-                
-
-                
-                
-
                 <!-- <div class="card h-auto w-full border border-zinc-400 p-5 rounded-lg space-y-2 shadow-lg bg-white dark:bg-neutral-950 dark:border-stone-800">
                     <p class="text-sm text-gray-800 dark:text-[#3792a5]">2023</p>
                     <a href="#" class="block hover:underline font-medium text-xl delay-100 duration-100">TakeNote</a>
@@ -83,60 +69,27 @@ require_once("../../autoload/autoload.php");
                         </a>
                     </div>
                 </div>-->
-
             </div>
-
-            <!-- <div class="pagnation flex items-center justify-end pt-5 gap-3 font-semibold ">
-                <span class="bg-gray-100 rounded-md py-1 px-3 dark:bg-neutral-950 dark:border-stone-800">
-                    <a href="#" class="">
-                <i class="fas fa-angle-left"></i>
-                </a>
-                </span>
-
-                <span>
-                    <a href="#" class="bg-gray-100 rounded-md py-1 px-3 dark:bg-neutral-950 dark:border-stone-800">1</a>
-                    <a href="#" class="bg-gray-100 rounded-md py-1 px-3 dark:bg-neutral-950 dark:border-stone-800">2</a>
-                    <a href="#" class="bg-gray-100 rounded-md py-1 px-3 dark:bg-neutral-950 dark:border-stone-800">3</a>
-                    <a href="#" class="bg-gray-100 rounded-md py-1 px-3 dark:bg-neutral-950 dark:border-stone-800">4</a>
-                    <a href="#" class="bg-gray-100 rounded-md py-1 px-3 dark:bg-neutral-950 dark:border-stone-800">5</a>
-                    <a href="#" class="bg-gray-100 rounded-md py-1 px-3 dark:bg-neutral-950 dark:border-stone-800">...</a>
-                </span>
-
-                <span class="bg-gray-100 rounded-md py-1 px-3 dark:bg-neutral-950 dark:border-stone-800">
-                    <a href="#" class="">
-                <i class="fas fa-angle-right"></i>
-                </a>
-                </span>
-            </div>
-        </div> -->
-
         <div class="pagnation flex items-center justify-end pt-5 gap-3 font-semibold">
-    <!-- Previous -->
-    <?php if ($currentPage > 1): ?>
+        <?php if ($currentPage > 1): ?>
         <a href="?page=<?= $currentPage - 1 ?>" class="bg-gray-100 rounded-md py-1 px-3 dark:bg-neutral-950 hover:bg-gray-300 dark:hover:bg-gray-800 transition">
             <i class="fas fa-angle-left"></i>
         </a>
-    <?php endif; ?>
-
-    <!-- Page Numbers -->
-    <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-        <a href="?page=<?= $i ?>" class="py-1 px-3 rounded-md 
-            <?= $i == $currentPage ? 'bg-blue-500 text-white dark:bg-blue-600' : 'bg-gray-100 dark:bg-neutral-950 hover:bg-gray-300 dark:hover:bg-gray-800' ?> transition">
-            <?= $i ?>
-        </a>
-    <?php endfor; ?>
-
-    <!-- Next -->
-    <?php if ($currentPage < $totalPages): ?>
-        <a href="?page=<?= $currentPage + 1 ?>" class="bg-gray-100 rounded-md py-1 px-3 dark:bg-neutral-950 hover:bg-gray-300 dark:hover:bg-gray-800 transition">
-            <i class="fas fa-angle-right"></i>
-        </a>
-    <?php endif; ?>
-</div>
-
-
-          <?php include("footer.php");?>
-        
-    </div>
+        <?php endif; ?>
+        <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+            <a href="?page=<?= $i ?>" class="py-1 px-3 rounded-md 
+                <?= $i == $currentPage ? 'bg-blue-500 text-white dark:bg-blue-600' : 'bg-gray-100 dark:bg-neutral-950 hover:bg-gray-300 dark:hover:bg-gray-800' ?> transition">
+                <?= $i ?>
+            </a>
+        <?php endfor; ?>
+        <?php if ($currentPage < $totalPages): ?>
+            <a href="?page=<?= $currentPage + 1 ?>" class="bg-gray-100 rounded-md py-1 px-3 dark:bg-neutral-950 hover:bg-gray-300 dark:hover:bg-gray-800 transition">
+                <i class="fas fa-angle-right"></i>
+            </a>
+        <?php endif; ?>
+        </div>
+            <?php include("footer.php");?>
+            
+        </div>
 </body>
 </html>
