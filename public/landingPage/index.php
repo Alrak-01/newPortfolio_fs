@@ -24,9 +24,11 @@ $skill->instance = "WHERE `type` = ?";
 
         <div class="lg:px-48 px-2 lg:pt-16 pt-10 flex items-start lg:flex-row flex-col-reverse w-full z-0">
             <div class="text lg:w-1/2 space-y-10">
-                <h1 class="lg:text-5xl text-4xl text-gray-900 dark:text-white font-medium">Hey, I'm Tania</h1>
+                <!-- <h1 class="lg:text-5xl text-4xl text-gray-900 dark:text-white font-medium">Hey, I'm Tania</h1> -->
+                <h1 class="lg:text-5xl text-4xl text-gray-900 dark:text-white font-medium">Hey, I'm Alrak</h1>
                 <h3 class="lg:text-xl text-lg text-gray-800 dark:text-gray-100">
-                    I'm a fullstack developer who builds and maintains open-source projects, with a focus on clean, efficient code.
+                    <!-- I'm a fullstack developer who builds and maintains open-source projects, with a focus on clean, efficient code. -->
+                     I build full-stack web applications with a focus on performance, usability, and long-term scalability.
                 </h3>
                 <h3 class="lg:text-xl text-lg text-gray-800 dark:text-gray-100">
                     On this site, you’ll find my <a href="project.php" class="text-[#3792a5] font-semibold">projects</a>, a list of my core <a href="#skill" class="text-[#3792a5] font-semibold">skills</a>, and a brief <a href="about.php" class="text-[#3792a5] font-semibold">about me</a> section that highlights my work as a fullstack developer.
